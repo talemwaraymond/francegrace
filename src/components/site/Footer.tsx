@@ -36,9 +36,9 @@ export function Footer() {
           <div>
             <h4 className="font-sans text-sm font-semibold uppercase tracking-wider text-gold">Contact</h4>
             <ul className="mt-4 space-y-3 text-sm text-cream/80">
-              <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-gold" /> hello@franceshgrace.com</li>
-              <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-gold" /> +1 (000) 000-0000</li>
-              <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-gold" /> Pan-Africa Distribution</li>
+              <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-gold" /><span>hello@franceshgrace.com</span></li>
+              <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-gold" /><span>+1 (000) 000-0000</span></li>
+              <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-gold" /><span>Pan-Africa Distribution</span></li>
             </ul>
           </div>
         </div>

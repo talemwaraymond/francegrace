@@ -1,12 +1,12 @@
 import elderberry from "@/assets/product-elderberry.jpg";
-import omega3 from "@/assets/product-omega3.png";
-import skinWhitening from "@/assets/product-skin-whitening.png";
-import magnesiumTriple from "@/assets/product-magnesium-triple.png";
-import magnesiumGlycinate from "@/assets/product-magnesium-glycinate.png";
-import ashwagandha from "@/assets/product-ashwagandha.png";
-import burn from "@/assets/product-burn.png";
-import maca from "@/assets/product-maca.png";
-import uricAcid from "@/assets/product-uric-acid.png";
+import omega3 from "@/assets/product-omega3.jpg";
+import skinWhitening from "@/assets/product-skin-whitening.jpg";
+import magnesiumTriple from "@/assets/product-magnesium-triple.jpg";
+import magnesiumGlycinate from "@/assets/product-magnesium-glycinate.jpg";
+import ashwagandha from "@/assets/product-ashwagandha.jpg";
+import burn from "@/assets/product-burn.jpg";
+import maca from "@/assets/product-maca.jpg";
+import uricAcid from "@/assets/product-uric-acid.jpg";
 
 export type Category =
   | "Immune Support"
