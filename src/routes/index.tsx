@@ -265,11 +265,11 @@ function HomePage() {
         </div>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {[
-            { t: "The Science Behind Omega-3 and Cardiovascular Wellness", c: "Heart & Brain", img: products[1].image },
-            { t: "Ashwagandha: Nature's Answer to Modern Stress", c: "Stress & Sleep", img: products[5].image },
-            { t: "Magnesium and the Science of Deep, Restorative Sleep", c: "Stress & Sleep", img: products[3].image },
+            { slug: "omega-3-and-cardiovascular-wellness", t: "The Science Behind Omega-3 and Cardiovascular Wellness", c: "Heart & Brain", img: products[1].image },
+            { slug: "ashwagandha-modern-stress", t: "Ashwagandha: Nature's Answer to Modern Stress", c: "Stress & Sleep", img: products[5].image },
+            { slug: "magnesium-deep-sleep", t: "Magnesium and the Science of Deep, Restorative Sleep", c: "Stress & Sleep", img: products[3].image },
           ].map((b) => (
-            <Link key={b.t} to="/blog" className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-lg">
+            <Link key={b.slug} to="/blog/$slug" params={{ slug: b.slug }} className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-lg">
               <div className="aspect-[4/3] overflow-hidden bg-muted">
                 <img src={b.img} alt={b.t} loading="lazy" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
               </div>
