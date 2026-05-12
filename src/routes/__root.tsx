@@ -79,10 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Premium wellness supplements crafted with carefully selected ingredients and modern formulations. Wellness backed by nature and science." },
       { name: "author", content: "Franceshgrace" },
       { property: "og:title", content: "Franceshgrace — Premium Wellness, Crafted with Intention" },
-      { property: "og:description", content: "Premium wellness supplements crafted with carefully selected ingredients and modern formulations." },
+      { property: "og:description", content: "Premium wellness supplements crafted with carefully selected ingredients and modern formulations. Wellness backed by nature and science." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Franceshgrace — Premium Wellness, Crafted with Intention" },
+      { name: "twitter:description", content: "Premium wellness supplements crafted with carefully selected ingredients and modern formulations. Wellness backed by nature and science." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f24c1bd8-42de-409b-babe-0c7983040e69/id-preview-5c9b848b--a8e40a25-5257-43d7-bc0f-e1cd8c8f2f0e.lovable.app-1778602568148.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f24c1bd8-42de-409b-babe-0c7983040e69/id-preview-5c9b848b--a8e40a25-5257-43d7-bc0f-e1cd8c8f2f0e.lovable.app-1778602568148.png" },
     ],
     links: [
       {
