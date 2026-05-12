@@ -40,7 +40,7 @@ export const Route = createFileRoute("/products/$slug")({
 });
 
 function ProductDetail() {
-  const { product } = Route.useLoaderData();
+  const { product } = Route.useLoaderData() as { product: Product };
   const related = relatedProducts(product.slug, product.category);
 
   return (
