@@ -6,7 +6,6 @@ import { Logo } from "./Logo";
 const navLinks = [
   { to: "/products", label: "Products" },
   { to: "/about", label: "About" },
-  { to: "/products", label: "Ingredients", hash: "ingredients" },
   { to: "/distributors", label: "Distributors" },
   { to: "/blog", label: "Blog" },
 ] as const;
