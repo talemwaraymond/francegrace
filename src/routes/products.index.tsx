@@ -4,7 +4,7 @@ import { Heart, Leaf, Brain, Moon, Sparkles, Dumbbell, Smile, ShieldCheck } from
 import { products, categories, type Category } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
 
-export const Route = createFileRoute("/products")({
+export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
       { title: "Products & Ingredients — Franceshgrace Premium Wellness" },
