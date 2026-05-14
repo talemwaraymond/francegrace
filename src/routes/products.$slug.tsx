@@ -69,11 +69,8 @@ function ProductDetail() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/distributors" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-emerald-deep">
-                Send Inquiry <Send className="h-4 w-4" />
-              </Link>
-              <a href="https://wa.me/10000000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center rounded-full border border-foreground/15 px-6 py-3 text-sm font-medium hover:bg-foreground/5">
-                WhatsApp Distributor
+              <a href="https://wa.me/10000000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-emerald-deep">
+                Inquire on WhatsApp <Send className="h-4 w-4" />
               </a>
             </div>
           </div>
