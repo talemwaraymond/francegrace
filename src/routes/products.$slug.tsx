@@ -126,6 +126,31 @@ function ProductDetail() {
         </div>
       </section>
 
+      {/* INGREDIENT CONTRIBUTIONS */}
+      {product.support && product.support.length > 0 && (
+        <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl md:text-4xl">How the Ingredients Support Your Wellness</h2>
+          <div className="mt-8 space-y-6">
+            {product.support.map((s) => (
+              <div key={s.ingredient} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <h3 className="font-serif text-xl text-primary">{s.ingredient}</h3>
+                <p className="mt-2 text-foreground/80">{s.detail}</p>
+                {s.bullets && (
+                  <ul className="mt-3 grid grid-cols-1 gap-1.5 sm:grid-cols-2">
+                    {s.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-2 text-sm text-foreground/80">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* BENEFITS */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
         <h2 className="font-serif text-3xl md:text-4xl">Key Benefits</h2>

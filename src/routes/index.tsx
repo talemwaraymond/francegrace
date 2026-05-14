@@ -77,9 +77,6 @@ function HomePage() {
               <Link to="/products" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-emerald-deep hover:shadow-md">
                 Explore Products <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link to="/distributors" className="inline-flex items-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-gold-foreground shadow-sm transition-all hover:opacity-90">
-                Become a Distributor
-              </Link>
               <Link to="/about" className="inline-flex items-center rounded-full border border-foreground/15 bg-transparent px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-foreground/5">
                 Our Story
               </Link>
