@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ArrowRight, Leaf, ShieldCheck, FlaskConical, Sparkles, Heart, Award,
-  Brain, Moon, Dumbbell, Bone, Smile, MessageCircle, Send,
+  Brain, Moon, Dumbbell, Bone, Smile,
 } from "lucide-react";
 import { products, categories, type Category } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
