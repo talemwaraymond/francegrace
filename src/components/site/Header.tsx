@@ -6,7 +6,6 @@ import { Logo } from "./Logo";
 const navLinks = [
   { to: "/products", label: "Products" },
   { to: "/about", label: "About" },
-  { to: "/distributors", label: "Distributors" },
   { to: "/blog", label: "Blog" },
 ] as const;
 
@@ -33,15 +32,6 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <Link
-            to="/distributors"
-            className="inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-emerald-deep hover:shadow-md"
-          >
-            Become a Distributor
-          </Link>
-        </div>
-
         <button
           className="md:hidden"
           aria-label="Toggle menu"
@@ -64,13 +54,6 @@ export function Header() {
                 {l.label}
               </Link>
             ))}
-            <Link
-              to="/distributors"
-              onClick={() => setOpen(false)}
-              className="mt-2 block rounded-full bg-primary px-5 py-2.5 text-center text-sm font-medium text-primary-foreground"
-            >
-              Become a Distributor
-            </Link>
           </div>
         </div>
       )}

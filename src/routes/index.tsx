@@ -21,9 +21,8 @@ export const Route = createFileRoute("/")({
 
 const stats = [
   { value: "10+", label: "Product Formulas" },
-  { value: "6", label: "Wellness Categories" },
+  { value: "30+", label: "Wellness Categories" },
   { value: "100%", label: "Quality Assured" },
-  { value: "Pan-Africa", label: "Distribution Vision" },
 ];
 
 const whyCards = [
@@ -208,47 +207,6 @@ function HomePage() {
               </p>
             </Link>
           ))}
-        </div>
-      </section>
-
-      {/* DISTRIBUTOR CTA */}
-      <section className="bg-foreground text-cream">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Partnership</span>
-            <h2 className="mt-3 font-serif text-4xl text-cream md:text-5xl">Become a Franceshgrace Distributor.</h2>
-            <p className="mt-5 max-w-lg text-cream/75">
-              We're building a trusted wellness brand across Africa and global markets. Join us as
-              a distributor and bring premium supplements to your community.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a
-                href="https://wa.me/10000000000"
-                target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-medium text-white hover:opacity-90"
-              >
-                <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
-              </a>
-              <Link to="/distributors" className="inline-flex items-center rounded-full border border-cream/30 px-6 py-3 text-sm font-medium text-cream hover:bg-cream/10">
-                Full Inquiry Form
-              </Link>
-            </div>
-          </div>
-          <form
-            className="rounded-2xl bg-cream p-6 text-foreground shadow-lg"
-            onSubmit={(e) => { e.preventDefault(); console.log("Quick inquiry submitted"); alert("Thank you — we will be in touch soon."); }}
-          >
-            <h3 className="font-serif text-2xl">Quick Inquiry</h3>
-            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              <input required placeholder="Full name" className="rounded-lg border border-border bg-background px-3 py-2.5 text-sm focus:border-primary focus:outline-none" />
-              <input required placeholder="Country" className="rounded-lg border border-border bg-background px-3 py-2.5 text-sm focus:border-primary focus:outline-none" />
-              <input required type="email" placeholder="Email" className="rounded-lg border border-border bg-background px-3 py-2.5 text-sm focus:border-primary focus:outline-none sm:col-span-2" />
-              <textarea placeholder="Tell us a little about your interest" rows={3} className="rounded-lg border border-border bg-background px-3 py-2.5 text-sm focus:border-primary focus:outline-none sm:col-span-2" />
-            </div>
-            <button type="submit" className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-emerald-deep">
-              Send Inquiry <Send className="h-4 w-4" />
-            </button>
-          </form>
         </div>
       </section>
 
