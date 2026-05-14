@@ -27,6 +27,7 @@ export interface Product {
   description: string[];
   facts: { label: string; value: string }[];
   ingredients: { name: string; description: string }[];
+  support?: { ingredient: string; detail: string; bullets?: string[] }[];
   use: string;
   size: string;
 }
