@@ -276,6 +276,66 @@ export const products: Product[] = [
   },
 ];
 
+const productSupport: Record<string, Product["support"]> = {
+  "triple-strength-omega-3": [
+    { ingredient: "Fish Oil (2200mg)", detail: "A rich source of Omega-3 fatty acids that helps support cardiovascular wellness, brain performance, eye health, and overall body function." },
+    { ingredient: "EPA — Eicosapentaenoic Acid (1400mg)", detail: "Known for supporting heart health, healthy circulation, and joint comfort. Also helps support the body's natural inflammatory balance and overall wellness." },
+    { ingredient: "DHA — Docosahexaenoic Acid (480mg)", detail: "An essential fatty acid highly concentrated in the brain and eyes. Helps support cognitive function, memory, focus, and visual wellness." },
+    { ingredient: "Omega-3 Fatty Acids (2000mg)", detail: "Omega-3 fatty acids help support:", bullets: ["Heart wellness", "Brain performance", "Joint mobility", "Healthy aging", "Overall body balance"] },
+  ],
+  "triple-magnesium-complex": [
+    { ingredient: "Magnesium Malate", detail: "Commonly associated with energy production and muscle support. May help support physical energy and reduce feelings of fatigue." },
+    { ingredient: "Magnesium Glycinate", detail: "Known for its calming and relaxing properties. Gentle on digestion and highly absorbable. Helps support:", bullets: ["Relaxation", "Restful sleep", "Nervous system balance", "Stress management"] },
+    { ingredient: "Magnesium Citrate", detail: "Supports healthy magnesium absorption and contributes to muscle function, nerve support, and digestive balance." },
+    { ingredient: "Total Magnesium Complex (300mg)", detail: "Magnesium plays an important role in:", bullets: ["Muscle relaxation", "Nerve function", "Energy production", "Sleep support", "Mood balance"] },
+  ],
+  "skin-whitening": [
+    { ingredient: "L-Glutathione (50mg)", detail: "A powerful antioxidant naturally produced in the body. Helps support:", bullets: ["Skin radiance", "Antioxidant protection", "Cellular wellness", "Healthy-looking complexion"] },
+    { ingredient: "Vitamin C (25mg)", detail: "Helps support collagen production and protects skin cells from oxidative stress while promoting skin vitality and brightness." },
+    { ingredient: "Licorice Extract", detail: "Traditionally used in beauty formulations to support skin clarity and a more even-looking complexion." },
+    { ingredient: "Amla", detail: "Rich in natural antioxidants and Vitamin C, helping support skin wellness and overall antioxidant protection." },
+    { ingredient: "Lemon Juice Powder", detail: "Contains natural antioxidant compounds that help support fresh, healthy-looking skin." },
+    { ingredient: "Mulberry", detail: "Commonly used in skincare support formulas to help promote brighter-looking skin and complexion balance." },
+  ],
+  "magnesium-glycinate-quercetin": [
+    { ingredient: "Elemental Magnesium (72mg)", detail: "Magnesium supports:", bullets: ["Muscle relaxation", "Nervous system function", "Calmness and relaxation", "Sleep quality", "Muscle recovery"] },
+    { ingredient: "Magnesium Glycinate", detail: "This highly absorbable form of magnesium is especially known for helping support relaxation and stress balance without causing digestive discomfort." },
+    { ingredient: "Quercetin Extract (50mg)", detail: "A plant-based antioxidant that helps support:", bullets: ["Immune wellness", "Cellular protection", "Recovery support", "Overall antioxidant balance"] },
+  ],
+  "ashwagandha-1300mg": [
+    { ingredient: "Organic Ashwagandha (1300mg)", detail: "A traditional adaptogenic herb known for helping the body manage stress naturally. Helps support:", bullets: ["Stress management", "Calmness", "Mental focus", "Mood balance", "Energy and stamina", "Overall vitality"] },
+    { ingredient: "Organic Black Pepper (10mg)", detail: "Commonly included to help enhance nutrient absorption and improve the effectiveness of herbal ingredients." },
+  ],
+  "fat-burner": [
+    { ingredient: "Calcium Beta Hydroxybutyrate (BHB)", detail: "A ketone-support ingredient commonly used in fitness and metabolism support formulas. Helps support:", bullets: ["Energy production", "Active lifestyle performance", "Metabolic support"] },
+    { ingredient: "Magnesium Beta Hydroxybutyrate", detail: "Magnesium contributes to muscle function, energy metabolism, and physical performance support." },
+    { ingredient: "Sodium Beta Hydroxybutyrate", detail: "Sodium helps support hydration and electrolyte balance during active lifestyles." },
+    { ingredient: "Proprietary Blend (800mg)", detail: "Formulated to complement metabolism and energy support as part of a healthy diet and exercise routine." },
+  ],
+  "uric-acid-cleanse": [
+    { ingredient: "Boswellia Extract (300mg)", detail: "Traditionally used to support joint comfort, mobility, and overall wellness." },
+    { ingredient: "Turmeric Extract (300mg)", detail: "Contains natural antioxidant compounds that help support joint wellness and the body's natural inflammatory balance." },
+    { ingredient: "Tart Cherry Extract (300mg)", detail: "Commonly used in wellness formulas to support recovery, joint comfort, and healthy uric acid balance." },
+    { ingredient: "TMG — Trimethylglycine (40mg)", detail: "Helps support cellular wellness and healthy metabolic processes." },
+    { ingredient: "Hyaluronic Acid (40mg)", detail: "Helps support joint lubrication, flexibility, and connective tissue wellness." },
+    { ingredient: "Garlic Extract (10mg)", detail: "Provides antioxidant support and contributes to overall wellness and circulation support." },
+    { ingredient: "Ginger Extract (10mg)", detail: "Traditionally used to support digestion, joint comfort, and overall body wellness." },
+  ],
+  "maca-1900mg": [
+    { ingredient: "Organic Maca Root (Lepidium meyenii) — 1900mg", detail: "Maca root is traditionally used to support:", bullets: ["Natural energy", "Physical stamina", "Endurance", "Vitality", "Reproductive wellness", "Hormonal balance support"] },
+    { ingredient: "For men and women", detail: "Maca is widely valued as a natural wellness herb for both men and women seeking daily vitality and performance support." },
+  ],
+  "elderberry-vitc-zinc": [
+    { ingredient: "Elderberry", detail: "Rich in antioxidants and traditionally used to support the immune system and overall wellness." },
+    { ingredient: "Vitamin C", detail: "Vitamin C contributes to:", bullets: ["Normal immune function", "Antioxidant protection", "Collagen support", "Cellular wellness"] },
+    { ingredient: "Zinc", detail: "An essential mineral that supports:", bullets: ["Immune health", "Cellular repair", "Skin wellness", "Normal body function"] },
+  ],
+};
+
+products.forEach((p) => {
+  if (productSupport[p.slug]) p.support = productSupport[p.slug];
+});
+
 export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
 export const relatedProducts = (slug: string, category: Category) =>
   products.filter((p) => p.slug !== slug && p.category === category).slice(0, 3);
