@@ -27,6 +27,7 @@ export function Header() {
               to={l.to}
               className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
               activeProps={{ className: "text-primary" }}
+              activeOptions={l.to === "/" ? { exact: true } : undefined}
             >
               {l.label}
             </Link>
