@@ -7,6 +7,13 @@ import ashwagandha from "@/assets/product-ashwagandha.jpg";
 import burn from "@/assets/product-burn.jpg";
 import maca from "@/assets/product-maca.jpg";
 import uricAcid from "@/assets/product-uric-acid.jpg";
+import alphaMemory from "@/assets/product-alpha-memory.jpg";
+import activatedCharcoal from "@/assets/product-activated-charcoal.jpg";
+import acneCleanse from "@/assets/product-acne-cleanse.jpg";
+import appleCiderVinegar from "@/assets/product-apple-cider-vinegar.jpg";
+import kelp from "@/assets/product-kelp.jpg";
+import alphaLipoicAcid from "@/assets/product-alpha-lipoic-acid.jpg";
+import aminoAcid from "@/assets/product-amino-acid.jpg";
 
 export type Category =
   | "Immune Support"
@@ -14,7 +21,9 @@ export type Category =
   | "Beauty & Skin"
   | "Stress & Sleep"
   | "Fitness & Performance"
-  | "Joint & Mobility";
+  | "Joint & Mobility"
+  | "Detox & Cleanse"
+  | "Thyroid & Metabolism";
 
 export interface Product {
   slug: string;
@@ -39,6 +48,8 @@ export const categories: Category[] = [
   "Stress & Sleep",
   "Fitness & Performance",
   "Joint & Mobility",
+  "Detox & Cleanse",
+  "Thyroid & Metabolism",
 ];
 
 export const products: Product[] = [
