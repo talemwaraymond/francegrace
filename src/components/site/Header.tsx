@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 
 const navLinks = [
+  { to: "/", label: "Home" },
   { to: "/products", label: "Products" },
   { to: "/about", label: "About" },
   { to: "/blog", label: "Blog" },
@@ -26,6 +27,7 @@ export function Header() {
               to={l.to}
               className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
               activeProps={{ className: "text-primary" }}
+              activeOptions={l.to === "/" ? { exact: true } : undefined}
             >
               {l.label}
             </Link>
