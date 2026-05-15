@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { products, categories, type Category } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
+import { HeroProductShowcase } from "@/components/site/HeroProductShowcase";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -83,19 +84,7 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="relative mx-auto aspect-[4/5] max-w-md overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-50 via-cream to-amber-50 shadow-2xl">
-              <img src={products[1].image} alt={products[1].name} width={1024} height={1280} className="h-full w-full object-cover" />
-            </div>
-            <div className="absolute -left-2 top-10 rounded-2xl bg-card px-4 py-3 shadow-lg ring-1 ring-border md:-left-8">
-              <p className="text-xs uppercase tracking-wider text-muted-foreground">Total Omega-3</p>
-              <p className="font-serif text-2xl text-foreground">2000mg</p>
-            </div>
-            <div className="absolute -right-2 bottom-10 rounded-2xl bg-card px-4 py-3 shadow-lg ring-1 ring-border md:-right-8">
-              <p className="text-xs uppercase tracking-wider text-muted-foreground">Quality Assured</p>
-              <p className="font-serif text-base text-foreground">GMP · Vegan friendly</p>
-            </div>
-          </div>
+          <HeroProductShowcase />
         </div>
       </section>
 
