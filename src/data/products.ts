@@ -283,6 +283,7 @@ export const products: Product[] = [
       { name: "Tart Cherry", description: "Antioxidant-rich fruit supporting healthy uric acid balance." },
       { name: "Hyaluronic Acid", description: "Supports flexibility and joint cushioning." },
     ],
+    use: "Take 2 capsules daily with water.",
   },
   {
     slug: "alpha-memory-focus",
