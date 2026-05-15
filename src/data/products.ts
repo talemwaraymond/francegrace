@@ -7,6 +7,13 @@ import ashwagandha from "@/assets/product-ashwagandha.jpg";
 import burn from "@/assets/product-burn.jpg";
 import maca from "@/assets/product-maca.jpg";
 import uricAcid from "@/assets/product-uric-acid.jpg";
+import alphaMemory from "@/assets/product-alpha-memory.jpg";
+import activatedCharcoal from "@/assets/product-activated-charcoal.jpg";
+import acneCleanse from "@/assets/product-acne-cleanse.jpg";
+import appleCiderVinegar from "@/assets/product-apple-cider-vinegar.jpg";
+import kelp from "@/assets/product-kelp.jpg";
+import alphaLipoicAcid from "@/assets/product-alpha-lipoic-acid.jpg";
+import aminoAcid from "@/assets/product-amino-acid.jpg";
 
 export type Category =
   | "Immune Support"
@@ -14,7 +21,9 @@ export type Category =
   | "Beauty & Skin"
   | "Stress & Sleep"
   | "Fitness & Performance"
-  | "Joint & Mobility";
+  | "Joint & Mobility"
+  | "Detox & Cleanse"
+  | "Thyroid & Metabolism";
 
 export interface Product {
   slug: string;
@@ -39,6 +48,8 @@ export const categories: Category[] = [
   "Stress & Sleep",
   "Fitness & Performance",
   "Joint & Mobility",
+  "Detox & Cleanse",
+  "Thyroid & Metabolism",
 ];
 
 export const products: Product[] = [
@@ -274,6 +285,170 @@ export const products: Product[] = [
     ],
     use: "Take 2 capsules daily with water.",
   },
+  {
+    slug: "alpha-memory-focus",
+    name: "FSG Alpha — Memory & Focus",
+    short: "Daily cognitive support for memory, focus & mental clarity.",
+    category: "Heart & Brain",
+    benefits: ["Memory", "Focus", "Mental Clarity"],
+    image: alphaMemory,
+    tagline: "Daily Cognitive Support Formula",
+    size: "60 Capsules",
+    description: [
+      "Franceshgrace Alpha is formulated to support memory, focus, and overall cognitive wellness for a sharper, more productive day.",
+      "Gluten-free and caffeine-free, this premium nootropic blend is designed for daily use to help support mental clarity, learning, and concentration.",
+    ],
+    facts: [
+      { label: "Format", value: "60 Capsules" },
+      { label: "Gluten Free", value: "Yes" },
+      { label: "Caffeine Free", value: "Yes" },
+    ],
+    ingredients: [
+      { name: "Cognitive Blend", description: "Supports memory, focus and mental performance." },
+      { name: "Nootropic Botanicals", description: "Traditionally used for clarity and concentration." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "activated-charcoal-1200mg",
+    name: "FSG Activated Charcoal 1200mg",
+    short: "Coconut shell charcoal for natural detox & gas relief.",
+    category: "Detox & Cleanse",
+    benefits: ["Detox", "Bloating Relief", "Highly Absorbent"],
+    image: activatedCharcoal,
+    tagline: "Natural Detox & Digestive Comfort",
+    size: "100 Veggie Capsules · 50 Servings",
+    description: [
+      "Franceshgrace Activated Charcoal is derived from premium coconut shells and provides 1200mg per serving for natural detoxification support.",
+      "Highly absorbent and traditionally used to help alleviate occasional gas and bloating while supporting the body's natural cleansing process.",
+    ],
+    facts: [
+      { label: "Activated Charcoal (Coconut Shell)", value: "1200mg" },
+      { label: "Servings per Bottle", value: "50" },
+      { label: "Capsule Type", value: "Veggie" },
+    ],
+    ingredients: [
+      { name: "Coconut Shell Activated Charcoal", description: "Premium source known for high adsorption capacity." },
+    ],
+    use: "Take 2 capsules with water, away from food and medications.",
+  },
+  {
+    slug: "acne-cleanse",
+    name: "FSG Acne Cleanse — Skin Care",
+    short: "Inner skin support for clear complexion & breakout balance.",
+    category: "Beauty & Skin",
+    benefits: ["Clear Skin", "Complexion", "Breakout Support"],
+    image: acneCleanse,
+    tagline: "Clear Skin from the Inside Out",
+    size: "90 Capsules",
+    description: [
+      "Franceshgrace Acne Cleanse is formulated to support a clear complexion, reduce occasional breakouts, and promote skin health from the inside out.",
+      "A daily skin wellness supplement combining botanical extracts and skin-supportive nutrients for visibly healthier-looking skin.",
+    ],
+    facts: [
+      { label: "Format", value: "90 Capsules" },
+      { label: "Daily Use", value: "Yes" },
+    ],
+    ingredients: [
+      { name: "Skin Botanical Blend", description: "Traditionally used to support clear, balanced skin." },
+      { name: "Antioxidant Nutrients", description: "Help protect skin cells from oxidative stress." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "apple-cider-vinegar",
+    name: "FSG Apple Cider Vinegar 1877mg",
+    short: "ACV blend for weight, glucose, cholesterol & immune support.",
+    category: "Thyroid & Metabolism",
+    benefits: ["Weight Wellness", "Metabolism", "Immune Support"],
+    image: appleCiderVinegar,
+    tagline: "Healthy Weight & Metabolism Support",
+    size: "90 Capsules",
+    description: [
+      "Franceshgrace Apple Cider Vinegar provides a powerful 1877mg ACV blend with 750mg acetic acid per serving.",
+      "Supports healthy weight, blood glucose, cholesterol levels, and immune wellness — all in convenient capsule form, no taste, no smell.",
+    ],
+    facts: [
+      { label: "ACV Blend", value: "1877mg" },
+      { label: "Acetic Acid", value: "750mg" },
+      { label: "Format", value: "90 Capsules" },
+    ],
+    ingredients: [
+      { name: "Apple Cider Vinegar", description: "Traditional wellness ingredient for metabolism and digestion." },
+      { name: "Acetic Acid", description: "Active component supporting metabolic balance." },
+    ],
+    use: "Take 1 capsule daily before meals.",
+  },
+  {
+    slug: "kelp-whole-thallus",
+    name: "FSG Kelp Whole Thallus 450mg",
+    short: "Natural iodine source for thyroid & immune wellness.",
+    category: "Thyroid & Metabolism",
+    benefits: ["Thyroid Support", "Iodine Source", "Immune Function"],
+    image: kelp,
+    tagline: "Natural Thyroid & Immune Support",
+    size: "200 Capsules",
+    description: [
+      "Franceshgrace Kelp Whole Thallus delivers 450mg of pure kelp per capsule — a natural ocean source of iodine that supports thyroid function and overall wellness.",
+      "Traditionally used to support healthy metabolism, energy production, and immune function.",
+    ],
+    facts: [
+      { label: "Whole Kelp Thallus", value: "450mg" },
+      { label: "Format", value: "200 Capsules" },
+    ],
+    ingredients: [
+      { name: "Whole Kelp", description: "Natural source of iodine and trace minerals." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "alpha-lipoic-acid-600mg",
+    name: "FSG Alpha Lipoic Acid 600mg",
+    short: "Pure & potent antioxidant for energy & cellular wellness.",
+    category: "Heart & Brain",
+    benefits: ["Antioxidant", "Cellular Support", "Energy"],
+    image: alphaLipoicAcid,
+    tagline: "Pure & Potent Antioxidant Support",
+    size: "120 Vegetable Capsules · 60 Servings",
+    description: [
+      "Franceshgrace Alpha Lipoic Acid delivers 600mg of pure ALA per serving for powerful antioxidant, cellular, and energy support.",
+      "Manufactured without magnesium stearate, dioxides, preservatives, or other artificial ingredients — pure and potent in every capsule.",
+    ],
+    facts: [
+      { label: "Alpha Lipoic Acid", value: "600mg" },
+      { label: "Format", value: "120 Vegetable Capsules" },
+      { label: "Servings", value: "60" },
+    ],
+    ingredients: [
+      { name: "Alpha Lipoic Acid", description: "A universal antioxidant that supports cellular energy and protection." },
+    ],
+    use: "Take 2 capsules daily with food.",
+  },
+  {
+    slug: "essential-amino-acid",
+    name: "FSG Essential Amino Acid Profile",
+    short: "Anytime energy & recovery in concord grape flavor.",
+    category: "Fitness & Performance",
+    benefits: ["Energy", "Recovery", "Muscle Support"],
+    image: aminoAcid,
+    tagline: "Anytime Energy & Recovery",
+    size: "9.5 oz (270g) · 30 Servings",
+    description: [
+      "Franceshgrace Essential Amino Acid Profile delivers a complete blend of essential amino acids in a refreshing concord grape flavor.",
+      "Formulated for anytime energy and recovery — 0g sugar with caffeine from natural sources for clean, sustained performance.",
+    ],
+    facts: [
+      { label: "Flavor", value: "Concord Grape" },
+      { label: "Net Weight", value: "9.5 oz (270g)" },
+      { label: "Servings", value: "30" },
+      { label: "Sugar", value: "0g" },
+    ],
+    ingredients: [
+      { name: "Essential Amino Acids (EAAs)", description: "The complete set the body needs for muscle and recovery." },
+      { name: "Natural Caffeine", description: "Clean energy from natural sources." },
+    ],
+    use: "Mix 1 scoop with 8–10 oz of water. Use anytime for energy or recovery.",
+  },
 ];
 
 const productSupport: Record<string, Product["support"]> = {
@@ -329,6 +504,36 @@ const productSupport: Record<string, Product["support"]> = {
     { ingredient: "Elderberry", detail: "Rich in antioxidants and traditionally used to support the immune system and overall wellness." },
     { ingredient: "Vitamin C", detail: "Vitamin C contributes to:", bullets: ["Normal immune function", "Antioxidant protection", "Collagen support", "Cellular wellness"] },
     { ingredient: "Zinc", detail: "An essential mineral that supports:", bullets: ["Immune health", "Cellular repair", "Skin wellness", "Normal body function"] },
+  ],
+  "alpha-memory-focus": [
+    { ingredient: "Cognitive Support Blend", detail: "Formulated to help support:", bullets: ["Memory retention", "Mental focus", "Concentration", "Daily cognitive performance", "Mental clarity"] },
+    { ingredient: "Gluten-Free & Caffeine-Free Formula", detail: "Designed for daily use without stimulants — supports natural focus without the jitters or crashes associated with caffeine." },
+  ],
+  "activated-charcoal-1200mg": [
+    { ingredient: "Activated Charcoal from Coconut Shells (1200mg)", detail: "Highly absorbent natural ingredient traditionally used to help support:", bullets: ["Natural detoxification", "Relief from occasional gas and bloating", "Digestive comfort", "Internal cleansing"] },
+    { ingredient: "Coconut Shell Source", detail: "Premium plant-based source known for its high adsorption capacity and purity compared to other charcoal sources." },
+  ],
+  "acne-cleanse": [
+    { ingredient: "Skin Wellness Blend", detail: "Formulated to support clear, healthy-looking skin from within. Helps support:", bullets: ["Clear complexion", "Reduction of occasional breakouts", "Skin balance", "Healthy skin from the inside out"] },
+    { ingredient: "Daily Skin Support", detail: "A gentle daily wellness formula that complements topical skincare routines for visibly healthier-looking skin." },
+  ],
+  "apple-cider-vinegar": [
+    { ingredient: "ACV Blend (1877mg)", detail: "A potent apple cider vinegar concentrate that helps support:", bullets: ["Healthy weight levels", "Blood glucose levels", "Cholesterol levels", "Immune system wellness"] },
+    { ingredient: "Acetic Acid (750mg)", detail: "The active component of apple cider vinegar, known for supporting metabolism, digestion, and overall wellness." },
+    { ingredient: "Convenient Capsule Form", detail: "Delivers the benefits of ACV without the strong taste or smell — easy to take daily before meals." },
+  ],
+  "kelp-whole-thallus": [
+    { ingredient: "Whole Kelp Thallus (450mg)", detail: "A natural ocean-sourced sea vegetable that helps support:", bullets: ["Thyroid function", "Healthy metabolism", "Energy production", "Immune wellness"] },
+    { ingredient: "Iodine Source", detail: "Kelp is one of nature's richest sources of iodine — an essential trace mineral the body needs for thyroid hormone production and overall metabolic balance." },
+  ],
+  "alpha-lipoic-acid-600mg": [
+    { ingredient: "Alpha Lipoic Acid (600mg)", detail: "A unique antioxidant that is both water- and fat-soluble, helping support:", bullets: ["Antioxidant protection", "Cellular wellness", "Energy production", "Healthy aging support"] },
+    { ingredient: "Pure & Potent Formula", detail: "Manufactured without magnesium stearate, dioxides, preservatives, or other artificial ingredients — clean potency in every capsule." },
+  ],
+  "essential-amino-acid": [
+    { ingredient: "Essential Amino Acids (EAAs)", detail: "The complete set of amino acids your body cannot produce on its own. Help support:", bullets: ["Muscle support", "Recovery", "Energy production", "Endurance during training"] },
+    { ingredient: "Natural Caffeine", detail: "A clean, plant-based caffeine source that helps support sustained energy without the crash of synthetic stimulants." },
+    { ingredient: "0g Sugar Formula", detail: "Refreshing concord grape flavor with no added sugar — perfect for anytime energy or post-workout recovery." },
   ],
 };
 
