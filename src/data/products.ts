@@ -505,6 +505,36 @@ const productSupport: Record<string, Product["support"]> = {
     { ingredient: "Vitamin C", detail: "Vitamin C contributes to:", bullets: ["Normal immune function", "Antioxidant protection", "Collagen support", "Cellular wellness"] },
     { ingredient: "Zinc", detail: "An essential mineral that supports:", bullets: ["Immune health", "Cellular repair", "Skin wellness", "Normal body function"] },
   ],
+  "alpha-memory-focus": [
+    { ingredient: "Cognitive Support Blend", detail: "Formulated to help support:", bullets: ["Memory retention", "Mental focus", "Concentration", "Daily cognitive performance", "Mental clarity"] },
+    { ingredient: "Gluten-Free & Caffeine-Free Formula", detail: "Designed for daily use without stimulants — supports natural focus without the jitters or crashes associated with caffeine." },
+  ],
+  "activated-charcoal-1200mg": [
+    { ingredient: "Activated Charcoal from Coconut Shells (1200mg)", detail: "Highly absorbent natural ingredient traditionally used to help support:", bullets: ["Natural detoxification", "Relief from occasional gas and bloating", "Digestive comfort", "Internal cleansing"] },
+    { ingredient: "Coconut Shell Source", detail: "Premium plant-based source known for its high adsorption capacity and purity compared to other charcoal sources." },
+  ],
+  "acne-cleanse": [
+    { ingredient: "Skin Wellness Blend", detail: "Formulated to support clear, healthy-looking skin from within. Helps support:", bullets: ["Clear complexion", "Reduction of occasional breakouts", "Skin balance", "Healthy skin from the inside out"] },
+    { ingredient: "Daily Skin Support", detail: "A gentle daily wellness formula that complements topical skincare routines for visibly healthier-looking skin." },
+  ],
+  "apple-cider-vinegar": [
+    { ingredient: "ACV Blend (1877mg)", detail: "A potent apple cider vinegar concentrate that helps support:", bullets: ["Healthy weight levels", "Blood glucose levels", "Cholesterol levels", "Immune system wellness"] },
+    { ingredient: "Acetic Acid (750mg)", detail: "The active component of apple cider vinegar, known for supporting metabolism, digestion, and overall wellness." },
+    { ingredient: "Convenient Capsule Form", detail: "Delivers the benefits of ACV without the strong taste or smell — easy to take daily before meals." },
+  ],
+  "kelp-whole-thallus": [
+    { ingredient: "Whole Kelp Thallus (450mg)", detail: "A natural ocean-sourced sea vegetable that helps support:", bullets: ["Thyroid function", "Healthy metabolism", "Energy production", "Immune wellness"] },
+    { ingredient: "Iodine Source", detail: "Kelp is one of nature's richest sources of iodine — an essential trace mineral the body needs for thyroid hormone production and overall metabolic balance." },
+  ],
+  "alpha-lipoic-acid-600mg": [
+    { ingredient: "Alpha Lipoic Acid (600mg)", detail: "A unique antioxidant that is both water- and fat-soluble, helping support:", bullets: ["Antioxidant protection", "Cellular wellness", "Energy production", "Healthy aging support"] },
+    { ingredient: "Pure & Potent Formula", detail: "Manufactured without magnesium stearate, dioxides, preservatives, or other artificial ingredients — clean potency in every capsule." },
+  ],
+  "essential-amino-acid": [
+    { ingredient: "Essential Amino Acids (EAAs)", detail: "The complete set of amino acids your body cannot produce on its own. Help support:", bullets: ["Muscle support", "Recovery", "Energy production", "Endurance during training"] },
+    { ingredient: "Natural Caffeine", detail: "A clean, plant-based caffeine source that helps support sustained energy without the crash of synthetic stimulants." },
+    { ingredient: "0g Sugar Formula", detail: "Refreshing concord grape flavor with no added sugar — perfect for anytime energy or post-workout recovery." },
+  ],
 };
 
 products.forEach((p) => {
