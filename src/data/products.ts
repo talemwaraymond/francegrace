@@ -14,6 +14,16 @@ import appleCiderVinegar from "@/assets/product-apple-cider-vinegar.jpg";
 import kelp from "@/assets/product-kelp.jpg";
 import alphaLipoicAcid from "@/assets/product-alpha-lipoic-acid.jpg";
 import aminoAcid from "@/assets/product-amino-acid.jpg";
+import aminoStrawberry from "@/assets/product-amino-strawberry.png";
+import astragalus from "@/assets/product-astragalus.png";
+import ashwagandha2100 from "@/assets/product-ashwagandha-2100.png";
+import ashwagandha500Calming from "@/assets/product-ashwagandha-500-calming.png";
+import ashwagandha1300Advanced from "@/assets/product-ashwagandha-1300-advanced.png";
+import ashwaPremium from "@/assets/product-ashwa-premium.png";
+import ashwagandha5in1Red from "@/assets/product-ashwagandha-5in1-red.png";
+import ashwagandhaOrganic90 from "@/assets/product-ashwagandha-organic-90.png";
+import ashwagandha5in1180 from "@/assets/product-ashwagandha-5in1-180.png";
+import ashwagandha500Extra from "@/assets/product-ashwagandha-500-extra.png";
 
 export type Category =
   | "Immune Support"
@@ -39,6 +49,7 @@ export interface Product {
   support?: { ingredient: string; detail: string; bullets?: string[] }[];
   use: string;
   size: string;
+  excludeFromHero?: boolean;
 }
 
 export const categories: Category[] = [
@@ -448,6 +459,248 @@ export const products: Product[] = [
       { name: "Natural Caffeine", description: "Clean energy from natural sources." },
     ],
     use: "Mix 1 scoop with 8–10 oz of water. Use anytime for energy or recovery.",
+  },
+  {
+    slug: "amino-acid-strawberry-burst",
+    name: "FSG Essential Amino Acid — Strawberry Burst",
+    short: "Anytime energy & recovery in strawberry burst flavor.",
+    category: "Fitness & Performance",
+    benefits: ["Energy", "Recovery", "0g Sugar"],
+    image: aminoStrawberry,
+    tagline: "Anytime Energy & Recovery — Strawberry Burst",
+    size: "9.5 oz (270g) · 30 Servings",
+    excludeFromHero: true,
+    description: [
+      "Franceshgrace Essential Amino Acid Profile in a refreshing Strawberry Burst flavor delivers a complete blend of EAAs for anytime energy and recovery.",
+      "Featuring guarana extract and synephrine from natural sources, with 0g sugar — formulated for clean, sustained performance.",
+    ],
+    facts: [
+      { label: "Flavor", value: "Strawberry Burst" },
+      { label: "Net Weight", value: "9.5 oz (270g)" },
+      { label: "Servings", value: "30" },
+      { label: "Sugar", value: "0g" },
+    ],
+    ingredients: [
+      { name: "Essential Amino Acids", description: "Complete EAAs for muscle support and recovery." },
+      { name: "Guarana Extract", description: "Natural source of clean caffeine for energy." },
+      { name: "Synephrine", description: "Natural compound supporting metabolism and energy." },
+    ],
+    use: "Mix 1 scoop with 8–10 oz of water. Use anytime for energy or recovery.",
+  },
+  {
+    slug: "astragalus-extract-500mg",
+    name: "FSG Astragalus Extract 500mg",
+    short: "Clinically validated astragalus for daily immune support.",
+    category: "Immune Support",
+    benefits: ["Immune Support", "Dairy/Soy/Gluten Free", "Clinically Validated"],
+    image: astragalus,
+    tagline: "Immune System Support Formula",
+    size: "150 Capsules",
+    excludeFromHero: true,
+    description: [
+      "Franceshgrace Astragalus Extract delivers 500mg per capsule of a traditional adaptogenic herb long used in wellness practices.",
+      "Dairy, soy, and gluten free with clinically validated strains — designed to support immune wellness and overall vitality.",
+    ],
+    facts: [
+      { label: "Astragalus Extract", value: "500mg" },
+      { label: "Capsules", value: "150" },
+      { label: "Allergens", value: "Dairy / Soy / Gluten Free" },
+    ],
+    ingredients: [
+      { name: "Astragalus Extract", description: "Traditional adaptogen used to support immune wellness." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "ashwagandha-2100mg",
+    name: "FSG Ashwagandha 2100mg Maximum Strength",
+    short: "Maximum-strength ashwagandha with black pepper extract.",
+    category: "Stress & Sleep",
+    benefits: ["Stress Reduction", "Immune Support", "Mood Enhancer"],
+    image: ashwagandha2100,
+    tagline: "Maximum Strength Adaptogen Formula",
+    size: "100 Veggie Capsules",
+    excludeFromHero: true,
+    description: [
+      "Franceshgrace Ashwagandha 2100mg combines a high-potency ashwagandha dose with black pepper extract for enhanced absorption.",
+      "Traditionally used to help promote stress reduction, support the immune system, and enhance mood balance.",
+    ],
+    facts: [
+      { label: "Ashwagandha", value: "2100mg" },
+      { label: "Black Pepper Extract", value: "Included" },
+      { label: "Capsules", value: "100 Veggie" },
+    ],
+    ingredients: [
+      { name: "Ashwagandha", description: "High-potency adaptogen for stress and vitality support." },
+      { name: "Black Pepper Extract", description: "Enhances absorption of active compounds." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "ashwagandha-500-calming",
+    name: "FSG Ashwagandha Extract 500mg — Calming Serenity",
+    short: "Gentle ashwagandha for occasional sleeplessness & energy.",
+    category: "Stress & Sleep",
+    benefits: ["Calming", "Sleep Support", "Energy"],
+    image: ashwagandha500Calming,
+    tagline: "Support Calming Serenity",
+    size: "150 Capsules · Vegetarian/Vegan",
+    excludeFromHero: true,
+    description: [
+      "Franceshgrace Ashwagandha Extract 500mg supports calming serenity and helps with occasional sleeplessness while boosting energy levels.",
+      "Non-GMO, vegetarian and vegan-friendly — a daily wellness companion for balance and steady vitality.",
+    ],
+    facts: [
+      { label: "Ashwagandha Extract", value: "500mg" },
+      { label: "Capsules", value: "150" },
+      { label: "Diet", value: "Vegetarian / Vegan · Non-GMO" },
+    ],
+    ingredients: [
+      { name: "Ashwagandha Extract", description: "Adaptogen for calm, sleep, and steady energy." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "ashwagandha-1300-advanced",
+    name: "FSG Ashwagandha 1300mg Advanced Stress Relief",
+    short: "Organic ashwagandha + black pepper for premium stress response.",
+    category: "Stress & Sleep",
+    benefits: ["Stress Response", "Energy & Mood", "Cortisol Balance"],
+    image: ashwagandha1300Advanced,
+    tagline: "Advanced Stress Relief Formula",
+    size: "120 Vegetarian Capsules",
+    excludeFromHero: true,
+    description: [
+      "Franceshgrace Ashwagandha 1300mg Advanced is made with organic ashwagandha and black pepper for premium stress response support.",
+      "Helps enhance energy and mood while supporting balanced cortisol levels.",
+    ],
+    facts: [
+      { label: "Organic Ashwagandha", value: "1300mg" },
+      { label: "Black Pepper", value: "Included" },
+      { label: "Capsules", value: "120 Vegetarian" },
+    ],
+    ingredients: [
+      { name: "Organic Ashwagandha", description: "Premium adaptogen for stress and cortisol balance." },
+      { name: "Black Pepper Extract", description: "Boosts absorption of active compounds." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "ashwa-premium-90",
+    name: "FSG ASHWA Premium Supplements",
+    short: "Stress support formula with organic ashwagandha + black pepper.",
+    category: "Stress & Sleep",
+    benefits: ["Stress Support", "Organic", "Premium"],
+    image: ashwaPremium,
+    tagline: "Premium Stress Support Formula",
+    size: "90 Capsules",
+    excludeFromHero: true,
+    description: [
+      "Franceshgrace ASHWA Premium is a stress support formula made with organic ashwagandha and black pepper extract.",
+      "A daily wellness supplement for everyday calm, focus, and resilience.",
+    ],
+    facts: [
+      { label: "Capsules", value: "90" },
+      { label: "Formula", value: "Organic Ashwagandha + Black Pepper" },
+    ],
+    ingredients: [
+      { name: "Organic Ashwagandha", description: "Traditional adaptogen for stress balance." },
+      { name: "Black Pepper Extract", description: "Supports nutrient absorption." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "ashwagandha-5in1-90",
+    name: "FSG Ashwagandha Extra Strength 5 in 1",
+    short: "5-in-1 ashwagandha blend for energy, immunity & stress.",
+    category: "Stress & Sleep",
+    benefits: ["Energy & Mood", "Immune Support", "Stress Response"],
+    image: ashwagandha5in1Red,
+    tagline: "Extra Strength 5 in 1 Formula",
+    size: "90 Capsules",
+    excludeFromHero: true,
+    description: [
+      "Franceshgrace Ashwagandha Extra Strength 5 in 1 is made with 5 natural ingredients to support energy and mood, the immune system, and a healthy stress response.",
+      "A comprehensive daily wellness formula for total vitality.",
+    ],
+    facts: [
+      { label: "Formula", value: "5 in 1" },
+      { label: "Capsules", value: "90" },
+    ],
+    ingredients: [
+      { name: "Ashwagandha Blend", description: "5-herb adaptogen blend for energy, immunity, and calm." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "ashwagandha-organic-usda",
+    name: "FSG Ashwagandha — USDA Organic",
+    short: "USDA Organic, Non-GMO ashwagandha for healthy stress response.",
+    category: "Stress & Sleep",
+    benefits: ["Healthy Stress Response", "USDA Organic", "Non-GMO"],
+    image: ashwagandhaOrganic90,
+    tagline: "Healthy Stress Response",
+    size: "90 Vegetarian Caps",
+    excludeFromHero: true,
+    description: [
+      "Franceshgrace Ashwagandha is USDA Organic and Non-GMO Project verified — a clean, herbal supplement for a healthy stress response.",
+      "Certified B Corporation quality you can trust for daily calm and balance.",
+    ],
+    facts: [
+      { label: "Capsules", value: "90 Vegetarian" },
+      { label: "Certifications", value: "USDA Organic · Non-GMO · B Corp" },
+    ],
+    ingredients: [
+      { name: "Organic Ashwagandha", description: "Certified organic adaptogen for stress wellness." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "ashwagandha-5in1-180",
+    name: "FSG Ashwagandha Maximum Strength 5 in 1 — 180 Caps",
+    short: "Maximum-strength 5-in-1 ashwagandha, 180-count value bottle.",
+    category: "Stress & Sleep",
+    benefits: ["Energy & Mood", "Immune System", "Stress Response"],
+    image: ashwagandha5in1180,
+    tagline: "Maximum Strength 5 in 1 Formula",
+    size: "180 Capsules",
+    excludeFromHero: true,
+    description: [
+      "Franceshgrace Ashwagandha Maximum Strength 5 in 1 is made with 5 organic ingredients to support energy and mood, the immune system, and a healthy stress response.",
+      "180-count value bottle for daily, long-term wellness routines.",
+    ],
+    facts: [
+      { label: "Formula", value: "Maximum Strength · 5 in 1" },
+      { label: "Capsules", value: "180" },
+    ],
+    ingredients: [
+      { name: "Ashwagandha Blend", description: "5 organic ingredients for total stress, energy, and immune wellness." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "ashwagandha-500-extra",
+    name: "FSG Ashwagandha Extra Strength 500mg",
+    short: "Extra-strength ashwagandha for stress relief & mood.",
+    category: "Stress & Sleep",
+    benefits: ["Stress Relief", "Energy & Mood", "Non-GMO"],
+    image: ashwagandha500Extra,
+    tagline: "Extra Strength Stress Relief",
+    size: "60 Veggie Capsules",
+    excludeFromHero: true,
+    description: [
+      "Franceshgrace Ashwagandha Extra Strength 500mg per serving delivers advanced stress relief and enhances energy and mood.",
+      "Non-GMO Project verified, in vegetarian capsules — a clean daily wellness supplement.",
+    ],
+    facts: [
+      { label: "Ashwagandha", value: "500mg per serving" },
+      { label: "Capsules", value: "60 Veggie" },
+      { label: "Certification", value: "Non-GMO Verified" },
+    ],
+    ingredients: [
+      { name: "Ashwagandha Extract", description: "Adaptogen for advanced stress relief and energy." },
+    ],
+    use: "Take 1 capsule daily with food.",
   },
 ];
 
