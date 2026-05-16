@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { products as allProducts } from "@/data/products";
 
-const products = allProducts.filter((p) => !p.excludeFromHero);
+const products = allProducts.filter((p) => p.featuredInHero);
 
 const AUTOPLAY_MS = 4500;
 

@@ -24,6 +24,10 @@ import ashwagandha5in1Red from "@/assets/product-ashwagandha-5in1-red.png";
 import ashwagandhaOrganic90 from "@/assets/product-ashwagandha-organic-90.png";
 import ashwagandha5in1180 from "@/assets/product-ashwagandha-5in1-180.png";
 import ashwagandha500Extra from "@/assets/product-ashwagandha-500-extra.png";
+import ashwagandhaExtra500Bioperine from "@/assets/product-ashwagandha-extra-500-bioperine.png";
+import ashwagandhaOrganicCaplets from "@/assets/product-ashwagandha-organic-caplets.png";
+import ashwagandhaExtra120Bioperine from "@/assets/product-ashwagandha-extra-120-bioperine.png";
+import ashwagandhaAnxietyStress from "@/assets/product-ashwagandha-anxiety-stress.png";
 
 export type Category =
   | "Immune Support"
@@ -49,7 +53,7 @@ export interface Product {
   support?: { ingredient: string; detail: string; bullets?: string[] }[];
   use: string;
   size: string;
-  excludeFromHero?: boolean;
+  featuredInHero?: boolean;
 }
 
 export const categories: Category[] = [
@@ -66,6 +70,7 @@ export const categories: Category[] = [
 export const products: Product[] = [
   {
     slug: "elderberry-vitc-zinc",
+    featuredInHero: true,
     name: "FSG Elderberry + Vitamin C + Zinc",
     short: "Daily immune system support with antioxidant power.",
     category: "Immune Support",
@@ -91,6 +96,7 @@ export const products: Product[] = [
   },
   {
     slug: "triple-strength-omega-3",
+    featuredInHero: true,
     name: "FSG Triple Strength Omega-3",
     short: "Advanced high-potency fish oil for heart, brain & joint wellness.",
     category: "Heart & Brain",
@@ -122,6 +128,7 @@ export const products: Product[] = [
   },
   {
     slug: "skin-whitening",
+    featuredInHero: true,
     name: "FSG Skin Whitening Capsules",
     short: "Radiance and skin wellness support from within.",
     category: "Beauty & Skin",
@@ -151,6 +158,7 @@ export const products: Product[] = [
   },
   {
     slug: "triple-magnesium-complex",
+    featuredInHero: true,
     name: "FSG Triple Magnesium Complex 300mg",
     short: "Multi-source magnesium for relaxation, sleep & recovery.",
     category: "Stress & Sleep",
@@ -177,6 +185,7 @@ export const products: Product[] = [
   },
   {
     slug: "magnesium-glycinate-quercetin",
+    featuredInHero: true,
     name: "FSG Magnesium Glycinate + Quercetin 400mg",
     short: "Gentle magnesium with antioxidant quercetin support.",
     category: "Stress & Sleep",
@@ -200,6 +209,7 @@ export const products: Product[] = [
   },
   {
     slug: "ashwagandha-1300mg",
+    featuredInHero: true,
     name: "FSG Ashwagandha 1300mg",
     short: "Organic adaptogen with black pepper for absorption.",
     category: "Stress & Sleep",
@@ -223,6 +233,7 @@ export const products: Product[] = [
   },
   {
     slug: "fat-burner",
+    featuredInHero: true,
     name: "FSG Burn — Thermogenic Fat Burner",
     short: "Metabolism and energy support for active goals.",
     category: "Fitness & Performance",
@@ -248,6 +259,7 @@ export const products: Product[] = [
   },
   {
     slug: "maca-1900mg",
+    featuredInHero: true,
     name: "FSG Maca 1900mg",
     short: "Organic maca root for stamina, vitality & balance.",
     category: "Fitness & Performance",
@@ -269,6 +281,7 @@ export const products: Product[] = [
   },
   {
     slug: "uric-acid-cleanse",
+    featuredInHero: true,
     name: "FSG Uric Acid Cleanse",
     short: "Joint comfort, mobility & natural cleansing support.",
     category: "Joint & Mobility",
@@ -298,6 +311,7 @@ export const products: Product[] = [
   },
   {
     slug: "alpha-memory-focus",
+    featuredInHero: true,
     name: "FSG Alpha — Memory & Focus",
     short: "Daily cognitive support for memory, focus & mental clarity.",
     category: "Heart & Brain",
@@ -322,6 +336,7 @@ export const products: Product[] = [
   },
   {
     slug: "activated-charcoal-1200mg",
+    featuredInHero: true,
     name: "FSG Activated Charcoal 1200mg",
     short: "Coconut shell charcoal for natural detox & gas relief.",
     category: "Detox & Cleanse",
@@ -345,6 +360,7 @@ export const products: Product[] = [
   },
   {
     slug: "acne-cleanse",
+    featuredInHero: true,
     name: "FSG Acne Cleanse — Skin Care",
     short: "Inner skin support for clear complexion & breakout balance.",
     category: "Beauty & Skin",
@@ -368,6 +384,7 @@ export const products: Product[] = [
   },
   {
     slug: "apple-cider-vinegar",
+    featuredInHero: true,
     name: "FSG Apple Cider Vinegar 1877mg",
     short: "ACV blend for weight, glucose, cholesterol & immune support.",
     category: "Thyroid & Metabolism",
@@ -392,6 +409,7 @@ export const products: Product[] = [
   },
   {
     slug: "kelp-whole-thallus",
+    featuredInHero: true,
     name: "FSG Kelp Whole Thallus 450mg",
     short: "Natural iodine source for thyroid & immune wellness.",
     category: "Thyroid & Metabolism",
@@ -414,6 +432,7 @@ export const products: Product[] = [
   },
   {
     slug: "alpha-lipoic-acid-600mg",
+    featuredInHero: true,
     name: "FSG Alpha Lipoic Acid 600mg",
     short: "Pure & potent antioxidant for energy & cellular wellness.",
     category: "Heart & Brain",
@@ -437,6 +456,7 @@ export const products: Product[] = [
   },
   {
     slug: "essential-amino-acid",
+    featuredInHero: true,
     name: "FSG Essential Amino Acid Profile",
     short: "Anytime energy & recovery in concord grape flavor.",
     category: "Fitness & Performance",
@@ -469,7 +489,6 @@ export const products: Product[] = [
     image: aminoStrawberry,
     tagline: "Anytime Energy & Recovery — Strawberry Burst",
     size: "9.5 oz (270g) · 30 Servings",
-    excludeFromHero: true,
     description: [
       "Franceshgrace Essential Amino Acid Profile in a refreshing Strawberry Burst flavor delivers a complete blend of EAAs for anytime energy and recovery.",
       "Featuring guarana extract and synephrine from natural sources, with 0g sugar — formulated for clean, sustained performance.",
@@ -496,7 +515,6 @@ export const products: Product[] = [
     image: astragalus,
     tagline: "Immune System Support Formula",
     size: "150 Capsules",
-    excludeFromHero: true,
     description: [
       "Franceshgrace Astragalus Extract delivers 500mg per capsule of a traditional adaptogenic herb long used in wellness practices.",
       "Dairy, soy, and gluten free with clinically validated strains — designed to support immune wellness and overall vitality.",
@@ -520,7 +538,6 @@ export const products: Product[] = [
     image: ashwagandha2100,
     tagline: "Maximum Strength Adaptogen Formula",
     size: "100 Veggie Capsules",
-    excludeFromHero: true,
     description: [
       "Franceshgrace Ashwagandha 2100mg combines a high-potency ashwagandha dose with black pepper extract for enhanced absorption.",
       "Traditionally used to help promote stress reduction, support the immune system, and enhance mood balance.",
@@ -545,7 +562,6 @@ export const products: Product[] = [
     image: ashwagandha500Calming,
     tagline: "Support Calming Serenity",
     size: "150 Capsules · Vegetarian/Vegan",
-    excludeFromHero: true,
     description: [
       "Franceshgrace Ashwagandha Extract 500mg supports calming serenity and helps with occasional sleeplessness while boosting energy levels.",
       "Non-GMO, vegetarian and vegan-friendly — a daily wellness companion for balance and steady vitality.",
@@ -569,7 +585,6 @@ export const products: Product[] = [
     image: ashwagandha1300Advanced,
     tagline: "Advanced Stress Relief Formula",
     size: "120 Vegetarian Capsules",
-    excludeFromHero: true,
     description: [
       "Franceshgrace Ashwagandha 1300mg Advanced is made with organic ashwagandha and black pepper for premium stress response support.",
       "Helps enhance energy and mood while supporting balanced cortisol levels.",
@@ -594,7 +609,6 @@ export const products: Product[] = [
     image: ashwaPremium,
     tagline: "Premium Stress Support Formula",
     size: "90 Capsules",
-    excludeFromHero: true,
     description: [
       "Franceshgrace ASHWA Premium is a stress support formula made with organic ashwagandha and black pepper extract.",
       "A daily wellness supplement for everyday calm, focus, and resilience.",
@@ -618,7 +632,6 @@ export const products: Product[] = [
     image: ashwagandha5in1Red,
     tagline: "Extra Strength 5 in 1 Formula",
     size: "90 Capsules",
-    excludeFromHero: true,
     description: [
       "Franceshgrace Ashwagandha Extra Strength 5 in 1 is made with 5 natural ingredients to support energy and mood, the immune system, and a healthy stress response.",
       "A comprehensive daily wellness formula for total vitality.",
@@ -641,7 +654,6 @@ export const products: Product[] = [
     image: ashwagandhaOrganic90,
     tagline: "Healthy Stress Response",
     size: "90 Vegetarian Caps",
-    excludeFromHero: true,
     description: [
       "Franceshgrace Ashwagandha is USDA Organic and Non-GMO Project verified — a clean, herbal supplement for a healthy stress response.",
       "Certified B Corporation quality you can trust for daily calm and balance.",
@@ -664,7 +676,6 @@ export const products: Product[] = [
     image: ashwagandha5in1180,
     tagline: "Maximum Strength 5 in 1 Formula",
     size: "180 Capsules",
-    excludeFromHero: true,
     description: [
       "Franceshgrace Ashwagandha Maximum Strength 5 in 1 is made with 5 organic ingredients to support energy and mood, the immune system, and a healthy stress response.",
       "180-count value bottle for daily, long-term wellness routines.",
@@ -687,7 +698,6 @@ export const products: Product[] = [
     image: ashwagandha500Extra,
     tagline: "Extra Strength Stress Relief",
     size: "60 Veggie Capsules",
-    excludeFromHero: true,
     description: [
       "Franceshgrace Ashwagandha Extra Strength 500mg per serving delivers advanced stress relief and enhances energy and mood.",
       "Non-GMO Project verified, in vegetarian capsules — a clean daily wellness supplement.",
@@ -699,6 +709,101 @@ export const products: Product[] = [
     ],
     ingredients: [
       { name: "Ashwagandha Extract", description: "Adaptogen for advanced stress relief and energy." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "ashwagandha-extra-500-bioperine",
+    name: "FSG Ashwagandha Extra Strength 500mg + Bioperine",
+    short: "Stress & mood support with bioperine for absorption.",
+    category: "Stress & Sleep",
+    benefits: ["Stress & Mood", "Bioperine Absorption", "Gluten & Soy Free"],
+    image: ashwagandhaExtra500Bioperine,
+    tagline: "Extra Strength Stress & Mood Support",
+    size: "120 Vegetarian Capsules · 60 Servings",
+    description: [
+      "Franceshgrace Ashwagandha Extra Strength delivers 500mg per serving paired with bioperine for enhanced nutrient absorption.",
+      "Formulated to support stress balance, mood, and daily resilience — free of gluten and soy.",
+    ],
+    facts: [
+      { label: "Ashwagandha", value: "500mg per serving" },
+      { label: "Bioperine", value: "Included" },
+      { label: "Capsules", value: "120 Vegetarian" },
+      { label: "Servings", value: "60" },
+    ],
+    ingredients: [
+      { name: "Ashwagandha Extract", description: "Adaptogen traditionally used for stress and mood balance." },
+      { name: "Bioperine (Black Pepper)", description: "Enhances absorption of active botanicals." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "ashwagandha-organic-caplets",
+    name: "FSG Organic Ashwagandha — Adrenal Support",
+    short: "USDA Organic ashwagandha caplets to release stress & boost energy.",
+    category: "Stress & Sleep",
+    benefits: ["Stress Release", "Energy Boost", "Adrenal Support"],
+    image: ashwagandhaOrganicCaplets,
+    tagline: "Releases Stress & Boosts Energy",
+    size: "60 Caplets",
+    description: [
+      "Franceshgrace Organic Ashwagandha is a USDA Organic, Non-GMO Project Verified herbal supplement traditionally used to release stress and boost energy.",
+      "Supports healthy adrenal function and daily vitality in convenient caplet form.",
+    ],
+    facts: [
+      { label: "Format", value: "60 Caplets" },
+      { label: "Certifications", value: "USDA Organic · Non-GMO" },
+    ],
+    ingredients: [
+      { name: "Organic Ashwagandha Root", description: "Certified organic adaptogen for stress, energy and adrenal wellness." },
+    ],
+    use: "Take 1 caplet daily with food.",
+  },
+  {
+    slug: "ashwagandha-extra-120-bioperine",
+    name: "FSG Ashwagandha Extra Strength 120ct — Withania Somnifera",
+    short: "Withania Somnifera with black bioperine for enhanced absorption.",
+    category: "Stress & Sleep",
+    benefits: ["Stress Support", "Non-GMO", "Gluten & Soy Free"],
+    image: ashwagandhaExtra120Bioperine,
+    tagline: "Withania Somnifera with Black Bioperine",
+    size: "120 Vegetarian Capsules",
+    description: [
+      "Franceshgrace Ashwagandha Extra Strength features authentic Withania Somnifera paired with black bioperine for enhanced nutrient absorption.",
+      "A clean daily wellness supplement — Non-GMO, Gluten-Free, and Soy-Free.",
+    ],
+    facts: [
+      { label: "Ashwagandha (Withania Somnifera)", value: "Extra Strength" },
+      { label: "Black Bioperine", value: "Included" },
+      { label: "Count", value: "120 Vegetarian Capsules" },
+      { label: "Certifications", value: "Non-GMO · Gluten-Free · Soy-Free" },
+    ],
+    ingredients: [
+      { name: "Withania Somnifera", description: "Authentic ashwagandha adaptogen for stress wellness." },
+      { name: "Black Bioperine", description: "Improves absorption of active compounds." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "ashwagandha-anxiety-stress-support",
+    name: "FSG Ashwagandha — Anxiety & Stress Support",
+    short: "Clinically-studied ashwagandha for occasional anxiety & stress.",
+    category: "Stress & Sleep",
+    benefits: ["Anxiety Support", "Stress Support", "Clinically Studied"],
+    image: ashwagandhaAnxietyStress,
+    tagline: "Anxiety & Stress Support",
+    size: "50 Capsules",
+    description: [
+      "Franceshgrace Ashwagandha Anxiety & Stress Support is formulated with clinically-studied ingredients to help support occasional anxiety and stress.",
+      "A daily herbal health companion for calm, balance, and resilience.",
+    ],
+    facts: [
+      { label: "Format", value: "50 Capsules" },
+      { label: "Focus", value: "Occasional Anxiety & Stress" },
+      { label: "Ingredients", value: "Clinically Studied" },
+    ],
+    ingredients: [
+      { name: "Ashwagandha", description: "Adaptogen traditionally used to support occasional anxiety and stress." },
     ],
     use: "Take 1 capsule daily with food.",
   },
