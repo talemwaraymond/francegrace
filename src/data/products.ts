@@ -24,6 +24,10 @@ import ashwagandha5in1Red from "@/assets/product-ashwagandha-5in1-red.png";
 import ashwagandhaOrganic90 from "@/assets/product-ashwagandha-organic-90.png";
 import ashwagandha5in1180 from "@/assets/product-ashwagandha-5in1-180.png";
 import ashwagandha500Extra from "@/assets/product-ashwagandha-500-extra.png";
+import ashwagandhaExtra500Bioperine from "@/assets/product-ashwagandha-extra-500-bioperine.png";
+import ashwagandhaOrganicCaplets from "@/assets/product-ashwagandha-organic-caplets.png";
+import ashwagandhaExtra120Bioperine from "@/assets/product-ashwagandha-extra-120-bioperine.png";
+import ashwagandhaAnxietyStress from "@/assets/product-ashwagandha-anxiety-stress.png";
 
 export type Category =
   | "Immune Support"
@@ -705,6 +709,101 @@ export const products: Product[] = [
     ],
     ingredients: [
       { name: "Ashwagandha Extract", description: "Adaptogen for advanced stress relief and energy." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "ashwagandha-extra-500-bioperine",
+    name: "FSG Ashwagandha Extra Strength 500mg + Bioperine",
+    short: "Stress & mood support with bioperine for absorption.",
+    category: "Stress & Sleep",
+    benefits: ["Stress & Mood", "Bioperine Absorption", "Gluten & Soy Free"],
+    image: ashwagandhaExtra500Bioperine,
+    tagline: "Extra Strength Stress & Mood Support",
+    size: "120 Vegetarian Capsules · 60 Servings",
+    description: [
+      "Franceshgrace Ashwagandha Extra Strength delivers 500mg per serving paired with bioperine for enhanced nutrient absorption.",
+      "Formulated to support stress balance, mood, and daily resilience — free of gluten and soy.",
+    ],
+    facts: [
+      { label: "Ashwagandha", value: "500mg per serving" },
+      { label: "Bioperine", value: "Included" },
+      { label: "Capsules", value: "120 Vegetarian" },
+      { label: "Servings", value: "60" },
+    ],
+    ingredients: [
+      { name: "Ashwagandha Extract", description: "Adaptogen traditionally used for stress and mood balance." },
+      { name: "Bioperine (Black Pepper)", description: "Enhances absorption of active botanicals." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "ashwagandha-organic-caplets",
+    name: "FSG Organic Ashwagandha — Adrenal Support",
+    short: "USDA Organic ashwagandha caplets to release stress & boost energy.",
+    category: "Stress & Sleep",
+    benefits: ["Stress Release", "Energy Boost", "Adrenal Support"],
+    image: ashwagandhaOrganicCaplets,
+    tagline: "Releases Stress & Boosts Energy",
+    size: "60 Caplets",
+    description: [
+      "Franceshgrace Organic Ashwagandha is a USDA Organic, Non-GMO Project Verified herbal supplement traditionally used to release stress and boost energy.",
+      "Supports healthy adrenal function and daily vitality in convenient caplet form.",
+    ],
+    facts: [
+      { label: "Format", value: "60 Caplets" },
+      { label: "Certifications", value: "USDA Organic · Non-GMO" },
+    ],
+    ingredients: [
+      { name: "Organic Ashwagandha Root", description: "Certified organic adaptogen for stress, energy and adrenal wellness." },
+    ],
+    use: "Take 1 caplet daily with food.",
+  },
+  {
+    slug: "ashwagandha-extra-120-bioperine",
+    name: "FSG Ashwagandha Extra Strength 120ct — Withania Somnifera",
+    short: "Withania Somnifera with black bioperine for enhanced absorption.",
+    category: "Stress & Sleep",
+    benefits: ["Stress Support", "Non-GMO", "Gluten & Soy Free"],
+    image: ashwagandhaExtra120Bioperine,
+    tagline: "Withania Somnifera with Black Bioperine",
+    size: "120 Vegetarian Capsules",
+    description: [
+      "Franceshgrace Ashwagandha Extra Strength features authentic Withania Somnifera paired with black bioperine for enhanced nutrient absorption.",
+      "A clean daily wellness supplement — Non-GMO, Gluten-Free, and Soy-Free.",
+    ],
+    facts: [
+      { label: "Ashwagandha (Withania Somnifera)", value: "Extra Strength" },
+      { label: "Black Bioperine", value: "Included" },
+      { label: "Count", value: "120 Vegetarian Capsules" },
+      { label: "Certifications", value: "Non-GMO · Gluten-Free · Soy-Free" },
+    ],
+    ingredients: [
+      { name: "Withania Somnifera", description: "Authentic ashwagandha adaptogen for stress wellness." },
+      { name: "Black Bioperine", description: "Improves absorption of active compounds." },
+    ],
+    use: "Take 1 capsule daily with food.",
+  },
+  {
+    slug: "ashwagandha-anxiety-stress-support",
+    name: "FSG Ashwagandha — Anxiety & Stress Support",
+    short: "Clinically-studied ashwagandha for occasional anxiety & stress.",
+    category: "Stress & Sleep",
+    benefits: ["Anxiety Support", "Stress Support", "Clinically Studied"],
+    image: ashwagandhaAnxietyStress,
+    tagline: "Anxiety & Stress Support",
+    size: "50 Capsules",
+    description: [
+      "Franceshgrace Ashwagandha Anxiety & Stress Support is formulated with clinically-studied ingredients to help support occasional anxiety and stress.",
+      "A daily herbal health companion for calm, balance, and resilience.",
+    ],
+    facts: [
+      { label: "Format", value: "50 Capsules" },
+      { label: "Focus", value: "Occasional Anxiety & Stress" },
+      { label: "Ingredients", value: "Clinically Studied" },
+    ],
+    ingredients: [
+      { name: "Ashwagandha", description: "Adaptogen traditionally used to support occasional anxiety and stress." },
     ],
     use: "Take 1 capsule daily with food.",
   },
