@@ -788,6 +788,45 @@ const productSupport: Record<string, Product["support"]> = {
     { ingredient: "Natural Caffeine", detail: "A clean, plant-based caffeine source that helps support sustained energy without the crash of synthetic stimulants." },
     { ingredient: "0g Sugar Formula", detail: "Refreshing concord grape flavor with no added sugar — perfect for anytime energy or post-workout recovery." },
   ],
+  "amino-acid-strawberry-burst": [
+    { ingredient: "Essential Amino Acids (EAAs)", detail: "Complete set of essential amino acids supporting:", bullets: ["Muscle support", "Recovery", "Energy production", "Training endurance"] },
+    { ingredient: "Guarana Extract", detail: "Natural plant source of caffeine for clean, sustained energy." },
+    { ingredient: "Synephrine", detail: "Naturally derived compound that helps support metabolism and active performance." },
+    { ingredient: "0g Sugar — Strawberry Burst", detail: "Refreshing strawberry burst flavor with zero added sugar — perfect for anytime use." },
+  ],
+  "astragalus-extract-500mg": [
+    { ingredient: "Astragalus Extract (500mg)", detail: "A traditional adaptogenic herb used for centuries to support:", bullets: ["Immune system wellness", "Daily vitality", "Resilience", "Overall wellness"] },
+    { ingredient: "Clean Formula", detail: "Dairy, soy, and gluten free with clinically validated strains for trusted daily use." },
+  ],
+  "ashwagandha-2100mg": [
+    { ingredient: "Ashwagandha (2100mg)", detail: "Maximum-strength adaptogenic herb that helps support:", bullets: ["Stress reduction", "Immune wellness", "Mood balance", "Daily vitality"] },
+    { ingredient: "Black Pepper Extract", detail: "Enhances absorption and bioavailability of ashwagandha's active compounds." },
+  ],
+  "ashwagandha-500-calming": [
+    { ingredient: "Ashwagandha Extract (500mg)", detail: "Gentle yet effective adaptogen helping support:", bullets: ["Calming serenity", "Occasional sleeplessness", "Healthy energy levels", "Stress balance"] },
+    { ingredient: "Vegetarian / Vegan · Non-GMO", detail: "Clean formula suitable for plant-based lifestyles, free from GMO ingredients." },
+  ],
+  "ashwagandha-1300-advanced": [
+    { ingredient: "Organic Ashwagandha (1300mg)", detail: "Premium adaptogen for advanced stress response. Helps support:", bullets: ["Premium stress response", "Energy and mood", "Cortisol balance", "Calm focus"] },
+    { ingredient: "Black Pepper Extract", detail: "Improves absorption of ashwagandha's withanolides for enhanced effectiveness." },
+  ],
+  "ashwa-premium-90": [
+    { ingredient: "Organic Ashwagandha + Black Pepper", detail: "A premium stress support formula. Helps support:", bullets: ["Stress balance", "Calm focus", "Daily resilience", "Overall wellness"] },
+  ],
+  "ashwagandha-5in1-90": [
+    { ingredient: "5-in-1 Ashwagandha Blend", detail: "Five natural ingredients working together to support:", bullets: ["Energy and mood", "Immune system", "Healthy stress response", "Daily vitality"] },
+  ],
+  "ashwagandha-organic-usda": [
+    { ingredient: "USDA Organic Ashwagandha", detail: "Certified organic adaptogen for a healthy stress response. Helps support:", bullets: ["Healthy stress response", "Calm focus", "Daily balance"] },
+    { ingredient: "Certifications", detail: "USDA Organic, Non-GMO Project Verified, and Certified B Corporation — clean quality you can trust." },
+  ],
+  "ashwagandha-5in1-180": [
+    { ingredient: "Maximum Strength 5-in-1 Blend (180 caps)", detail: "Five organic ingredients in a value-size bottle. Helps support:", bullets: ["Energy and mood", "Immune system", "Healthy stress response", "Long-term daily wellness"] },
+  ],
+  "ashwagandha-500-extra": [
+    { ingredient: "Ashwagandha Extract (500mg per serving)", detail: "Extra strength adaptogen helping support:", bullets: ["Advanced stress relief", "Enhanced energy and mood", "Daily resilience"] },
+    { ingredient: "Non-GMO Verified", detail: "Clean, plant-based vegetarian capsules — Non-GMO Project verified for trusted quality." },
+  ],
 };
 
 products.forEach((p) => {

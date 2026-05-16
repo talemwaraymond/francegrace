@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { products } from "@/data/products";
+import { products as allProducts } from "@/data/products";
+
+const products = allProducts.filter((p) => !p.excludeFromHero);
 
 const AUTOPLAY_MS = 4500;
 
