@@ -1,12 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import {
-  ArrowRight, Leaf, ShieldCheck, FlaskConical, Sparkles, Heart, Award,
-  Brain, Moon, Dumbbell, Bone, Smile,
-} from "lucide-react";
-import { products, categories, type Category } from "@/data/products";
-import { ProductCard } from "@/components/site/ProductCard";
+import { ArrowRight, Leaf } from "lucide-react";
 import { HeroProductShowcase } from "@/components/site/HeroProductShowcase";
+import { ProductScrollStrip } from "@/components/site/ProductScrollStrip";
+import { LifestyleSection } from "@/components/site/LifestyleSection";
+import { HexCategories } from "@/components/site/HexCategories";
+import { products } from "@/data/products";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -26,37 +25,9 @@ const stats = [
   { value: "100%", label: "Quality Assured" },
 ];
 
-const whyCards = [
-  { icon: Leaf, title: "Premium Ingredients", text: "Carefully sourced botanicals, vitamins, and minerals selected for purity and potency." },
-  { icon: FlaskConical, title: "Science-Inspired", text: "Modern formulations grounded in nutritional research and clinical wisdom." },
-  { icon: ShieldCheck, title: "Quality Assured", text: "Manufactured under strict GMP standards for consistent quality every batch." },
-  { icon: Sparkles, title: "Daily Wellness", text: "Practical formats designed to fit seamlessly into your everyday routine." },
-  { icon: Award, title: "Trusted Brand", text: "Built on transparency, integrity, and a genuine commitment to your wellbeing." },
-];
-
-const ingredients = [
-  { icon: Heart, name: "Omega-3", desc: "EPA & DHA for heart, brain & joint wellness." },
-  { icon: Leaf, name: "Elderberry", desc: "Antioxidant flavonoids for immune support." },
-  { icon: Brain, name: "Ashwagandha", desc: "Adaptogen for stress, mood & vitality." },
-  { icon: Moon, name: "Magnesium", desc: "Relaxation, sleep & muscle wellness." },
-  { icon: Sparkles, name: "Glutathione", desc: "Master antioxidant for skin radiance." },
-  { icon: Dumbbell, name: "Maca Root", desc: "Andean superfood for stamina & vitality." },
-  { icon: Smile, name: "Turmeric", desc: "Botanical for joint comfort & balance." },
-  { icon: ShieldCheck, name: "Zinc", desc: "Trace mineral for immune cell function." },
-];
-
-const wellnessCats: { name: Category; from: string; to: string; icon: typeof Leaf }[] = [
-  { name: "Immune Support", from: "from-orange-100", to: "to-emerald-100", icon: ShieldCheck },
-  { name: "Heart & Brain", from: "from-blue-100", to: "to-sky-200", icon: Heart },
-  { name: "Beauty & Skin", from: "from-amber-100", to: "to-rose-100", icon: Sparkles },
-  { name: "Stress & Sleep", from: "from-violet-100", to: "to-emerald-100", icon: Moon },
-  { name: "Fitness & Performance", from: "from-rose-100", to: "to-amber-100", icon: Dumbbell },
-  { name: "Joint & Mobility", from: "from-emerald-100", to: "to-teal-100", icon: Bone },
-];
-
 function HomePage() {
-  const [activeCat, setActiveCat] = useState<Category | "All">("All");
-  const filtered = activeCat === "All" ? products : products.filter((p) => p.category === activeCat);
+  // Single shared "open product" state across both inline-panel sections.
+  const [openSlug, setOpenSlug] = useState<string | null>(null);
 
   return (
     <div>
@@ -100,101 +71,14 @@ function HomePage() {
         </div>
       </section>
 
-      {/* PRODUCTS */}
-      <section id="products" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Our Catalogue</span>
-          <h2 className="mt-3 font-serif text-4xl md:text-5xl">Formulas for daily wellness</h2>
-          <p className="mt-4 max-w-2xl text-muted-foreground">
-            Nine premium supplements, each formulated with care for a specific area of wellness.
-          </p>
-        </div>
+      {/* PRODUCT SCROLL STRIP */}
+      <ProductScrollStrip openSlug={openSlug} setOpenSlug={setOpenSlug} />
 
-        <div className="mt-10 flex flex-wrap justify-center gap-2">
-          {(["All", ...categories] as const).map((c) => (
-            <button
-              key={c}
-              onClick={() => setActiveCat(c)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                activeCat === c
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-accent text-accent-foreground hover:bg-primary/10"
-              }`}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
+      {/* LIFESTYLE FEATURE — replaces old Why section */}
+      <LifestyleSection openSlug={openSlug} setOpenSlug={setOpenSlug} />
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((p) => <ProductCard key={p.slug} product={p} />)}
-        </div>
-      </section>
-
-      {/* WHY */}
-      <section className="bg-emerald-deep text-cream">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Why Franceshgrace</span>
-            <h2 className="mt-3 font-serif text-4xl md:text-5xl">A standard you can feel.</h2>
-            <p className="mt-4 text-cream/80">
-              Five principles guide every formula we make — so the product in your cabinet is one
-              you can trust, every single day.
-            </p>
-          </div>
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-            {whyCards.map((c) => (
-              <div key={c.title} className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur transition-colors hover:bg-cream/10">
-                <c.icon className="h-7 w-7 text-gold" />
-                <h3 className="mt-4 font-serif text-xl text-cream">{c.title}</h3>
-                <p className="mt-2 text-sm text-cream/75">{c.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* INGREDIENTS */}
-      <section id="ingredients" className="bg-cream">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Key Ingredients</span>
-            <h2 className="mt-3 font-serif text-4xl md:text-5xl">The building blocks of wellness.</h2>
-          </div>
-          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-            {ingredients.map((i) => (
-              <div key={i.name} className="rounded-2xl border border-border bg-card p-5 transition-shadow hover:shadow-md">
-                <i.icon className="h-6 w-6 text-primary" />
-                <p className="mt-3 font-serif text-lg text-foreground">{i.name}</p>
-                <p className="mt-1 text-xs text-muted-foreground">{i.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WELLNESS CATEGORIES */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Browse by Goal</span>
-          <h2 className="mt-3 font-serif text-4xl md:text-5xl">Wellness Categories</h2>
-        </div>
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {wellnessCats.map((c) => (
-            <Link
-              key={c.name}
-              to="/products"
-              className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${c.from} ${c.to} p-8 transition-transform hover:-translate-y-1`}
-            >
-              <c.icon className="h-8 w-8 text-emerald-deep" />
-              <h3 className="mt-4 font-serif text-2xl text-foreground">{c.name}</h3>
-              <p className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-emerald-deep">
-                Explore <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </p>
-            </Link>
-          ))}
-        </div>
-      </section>
+      {/* OUR CATEGORIES — honeycomb */}
+      <HexCategories />
 
       {/* BLOG PREVIEW */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
