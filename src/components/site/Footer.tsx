@@ -36,7 +36,8 @@ export function Footer() {
             <h4 className="font-sans text-sm font-semibold uppercase tracking-wider text-gold">Contact</h4>
             <ul className="mt-4 space-y-3 text-sm text-cream/80">
               <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-gold" /><span>hello@franceshgrace.com</span></li>
-              <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-gold" /><span>+1 (000) 000-0000</span></li>
+              <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-gold" /><a href="tel:+8619566806560" className="hover:text-gold">+86 195 6680 6560</a></li>
+              <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-gold" /><a href="https://wa.me/8619566806560" target="_blank" rel="noopener noreferrer" className="hover:text-gold">WhatsApp: +86 195 6680 6560</a></li>
             </ul>
           </div>
         </div>
