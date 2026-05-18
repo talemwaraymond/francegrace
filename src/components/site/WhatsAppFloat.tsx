@@ -1,5 +1,5 @@
 // Update PHONE to your distributor WhatsApp number (international format, no +).
-const PHONE = "10000000000";
+const PHONE = "8619566806560";
 
 export function WhatsAppFloat() {
   return (

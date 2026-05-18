@@ -1,11 +1,91 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { products as allProducts } from "@/data/products";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { products as allProducts, type Product } from "@/data/products";
 
-const products = allProducts.filter((p) => p.featuredInHero);
+type Slide = {
+  productSlugs: string[]; // first is primary
+  headline: string;
+  photo: string; // unsplash url
+  gradient: string; // tailwind/inline gradient overlay
+  focus?: string; // object-position
+};
 
-const AUTOPLAY_MS = 4500;
+const u = (id: string) =>
+  `https://images.unsplash.com/photo-${id}?w=1600&q=85&auto=format&fit=crop`;
+
+const slides: Slide[] = [
+  {
+    productSlugs: ["triple-strength-omega-3"],
+    headline: "Active Lives Deserve Premium Nutrition",
+    photo: u("1571019613454-1cb2f99b2d8b"),
+    gradient:
+      "linear-gradient(90deg, rgba(26,61,50,0.72) 0%, rgba(26,61,50,0.35) 45%, rgba(26,61,50,0) 75%)",
+  },
+  {
+    productSlugs: ["ashwagandha-1300mg"],
+    headline: "Find Your Calm in Every Capsule",
+    photo: u("1544367595-24991e40f6a7"),
+    gradient:
+      "linear-gradient(90deg, rgba(45,26,58,0.70) 0%, rgba(45,26,58,0.30) 50%, rgba(45,26,58,0) 80%)",
+  },
+  {
+    productSlugs: ["elderberry-vitc-zinc"],
+    headline: "Shield Your Body with Triple Power",
+    photo: u("1606787619248-f301830a5a57"),
+    gradient:
+      "linear-gradient(90deg, rgba(13,40,54,0.68) 0%, rgba(13,40,54,0.30) 50%, rgba(13,40,54,0) 80%)",
+  },
+  {
+    productSlugs: ["skin-whitening"],
+    headline: "Radiant Skin Starts Within Your Cells",
+    photo: u("1580489944761-15a19d654956"),
+    gradient:
+      "linear-gradient(90deg, rgba(42,18,24,0.65) 0%, rgba(42,18,24,0.25) 50%, rgba(42,18,24,0) 80%)",
+  },
+  {
+    productSlugs: ["fat-burner", "maca-1900mg"],
+    headline: "Fuel Your Performance Naturally",
+    photo: u("1534438327779-4b4d626b5739"),
+    gradient:
+      "linear-gradient(90deg, rgba(20,30,20,0.70) 0%, rgba(20,30,20,0.30) 50%, rgba(20,30,20,0) 80%)",
+  },
+];
+
+const AUTOPLAY_MS = 5000;
+
+function ProductOverlayCard({ product }: { product: Product }) {
+  return (
+    <Link
+      to="/products/$slug"
+      params={{ slug: product.slug }}
+      className="group flex items-center gap-3 rounded-2xl bg-background/95 p-3 pr-4 shadow-xl ring-1 ring-border backdrop-blur transition-all hover:-translate-y-0.5 hover:shadow-2xl"
+    >
+      <div className="h-[60px] w-[60px] shrink-0 overflow-hidden rounded-xl bg-cream">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="h-full w-full object-contain p-1"
+        />
+      </div>
+      <div className="min-w-0">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+          {product.category}
+        </p>
+        <p
+          className="truncate font-serif text-foreground"
+          style={{ fontSize: "17px", lineHeight: 1.15 }}
+        >
+          {product.name}
+        </p>
+        <p className="mt-0.5 inline-flex items-center gap-1 text-[11px] font-medium text-primary">
+          View full details
+          <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+        </p>
+      </div>
+    </Link>
+  );
+}
 
 export function HeroProductShowcase() {
   const [index, setIndex] = useState(0);
@@ -13,17 +93,20 @@ export function HeroProductShowcase() {
 
   useEffect(() => {
     if (paused) return;
-    const id = setInterval(() => {
-      setIndex((i) => (i + 1) % products.length);
-    }, AUTOPLAY_MS);
+    const id = setInterval(
+      () => setIndex((i) => (i + 1) % slides.length),
+      AUTOPLAY_MS,
+    );
     return () => clearInterval(id);
   }, [paused]);
 
   const go = (dir: 1 | -1) =>
-    setIndex((i) => (i + dir + products.length) % products.length);
+    setIndex((i) => (i + dir + slides.length) % slides.length);
 
-  const current = products[index];
-  const headlineFact = current.facts[0];
+  const current = slides[index];
+  const currentProducts = current.productSlugs
+    .map((s) => allProducts.find((p) => p.slug === s))
+    .filter(Boolean) as Product[];
 
   return (
     <div
@@ -31,112 +114,75 @@ export function HeroProductShowcase() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Stage */}
-      <div className="relative mx-auto aspect-[4/5] max-w-md overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-50 via-cream to-amber-50 shadow-2xl ring-1 ring-border/40">
-        {products.map((p, i) => (
-          <img
-            key={p.slug}
-            src={p.image}
-            alt={p.name}
-            width={1024}
-            height={1280}
-            className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-out ${
-              i === index
-                ? "scale-100 opacity-100"
-                : "pointer-events-none scale-105 opacity-0"
+      <div className="relative mx-auto aspect-[4/5] max-w-md overflow-hidden rounded-3xl shadow-2xl ring-1 ring-border/40 sm:aspect-[5/6]">
+        {slides.map((s, i) => (
+          <div
+            key={i}
+            className={`absolute inset-0 transition-opacity duration-[800ms] ease-out ${
+              i === index ? "opacity-100" : "pointer-events-none opacity-0"
             }`}
-          />
+          >
+            <img
+              src={s.photo}
+              alt=""
+              className="h-full w-full object-cover"
+              style={{ objectPosition: s.focus ?? "center" }}
+              loading={i === 0 ? "eager" : "lazy"}
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: s.gradient }}
+            />
+          </div>
         ))}
 
-        {/* Subtle gradient at the bottom for label readability */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/15 to-transparent" />
-
-        {/* Bottom-floating product name + arrow */}
-        <Link
-          to="/products/$slug"
-          params={{ slug: current.slug }}
-          className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-3 rounded-2xl bg-background/85 px-4 py-3 shadow-lg ring-1 ring-border backdrop-blur transition-all hover:bg-background"
-        >
-          <div className="min-w-0">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary">
-              {current.category}
-            </p>
-            <p className="truncate font-serif text-sm text-foreground">
-              {current.name}
-            </p>
-          </div>
-          <ChevronRight className="h-5 w-5 shrink-0 text-primary" />
-        </Link>
-      </div>
-
-      {/* Floating badge — top-left (animated by key) */}
-      {headlineFact && (
-        <div
-          key={`top-${current.slug}`}
-          className="fade-in-up absolute -left-2 top-10 rounded-2xl bg-card px-4 py-3 shadow-lg ring-1 ring-border md:-left-8"
-        >
-          <p className="text-xs uppercase tracking-wider text-muted-foreground">
-            {headlineFact.label}
+        {/* Headline */}
+        <div className="absolute inset-x-0 top-0 p-6 sm:p-8">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold drop-shadow">
+            {currentProducts[0]?.category}
           </p>
-          <p className="font-serif text-2xl text-foreground">
-            {headlineFact.value}
-          </p>
+          <h2
+            key={`h-${index}`}
+            className="fade-in-up mt-2 max-w-[18ch] font-serif text-2xl leading-tight text-cream drop-shadow-lg sm:text-3xl"
+          >
+            {current.headline}
+          </h2>
         </div>
-      )}
 
-      {/* Floating badge — bottom-right */}
-      <div
-        key={`btm-${current.slug}`}
-        className="fade-in-up absolute -right-2 bottom-24 rounded-2xl bg-card px-4 py-3 shadow-lg ring-1 ring-border md:-right-8"
-      >
-        <p className="text-xs uppercase tracking-wider text-muted-foreground">
-          Quality Assured
-        </p>
-        <p className="font-serif text-base text-foreground">
-          GMP · {current.size}
-        </p>
+        {/* Product overlay cards bottom-right */}
+        <div className="absolute inset-x-4 bottom-4 flex flex-col items-end gap-2 sm:inset-auto sm:bottom-5 sm:right-5 sm:max-w-[78%]">
+          {currentProducts.map((p) => (
+            <div key={p.slug} className="w-full sm:w-[280px]">
+              <ProductOverlayCard product={p} />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Prev / Next */}
       <button
-        aria-label="Previous product"
+        aria-label="Previous slide"
         onClick={() => go(-1)}
-        className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-background/90 p-2 text-foreground shadow-md ring-1 ring-border transition-all hover:bg-background md:-left-4"
+        className="absolute bottom-[-1.25rem] left-1/2 z-10 -translate-x-[2.25rem] rounded-full bg-background p-2 text-foreground shadow-md ring-1 ring-border transition-all hover:bg-primary hover:text-primary-foreground"
       >
         <ChevronLeft className="h-5 w-5" />
       </button>
       <button
-        aria-label="Next product"
+        aria-label="Next slide"
         onClick={() => go(1)}
-        className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-background/90 p-2 text-foreground shadow-md ring-1 ring-border transition-all hover:bg-background md:-right-4"
+        className="absolute bottom-[-1.25rem] left-1/2 z-10 translate-x-[0.25rem] rounded-full bg-background p-2 text-foreground shadow-md ring-1 ring-border transition-all hover:bg-primary hover:text-primary-foreground"
       >
         <ChevronRight className="h-5 w-5" />
       </button>
 
-      {/* Thumbnail rail */}
-      <div className="mt-6 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {products.map((p, i) => (
+      {/* Dots */}
+      <div className="mt-10 flex items-center justify-center gap-1.5">
+        {slides.map((_, i) => (
           <button
-            key={p.slug}
+            key={i}
+            aria-label={`Go to slide ${i + 1}`}
             onClick={() => setIndex(i)}
-            aria-label={`View ${p.name}`}
-            className={`relative h-14 w-14 shrink-0 overflow-hidden rounded-xl ring-2 transition-all ${
-              i === index
-                ? "ring-primary"
-                : "opacity-60 ring-transparent hover:opacity-100"
-            }`}
-          >
-            <img src={p.image} alt="" className="h-full w-full object-cover" />
-          </button>
-        ))}
-      </div>
-
-      {/* Progress dots */}
-      <div className="mt-4 flex items-center justify-center gap-1.5">
-        {products.map((p, i) => (
-          <span
-            key={p.slug}
-            className={`h-1 rounded-full transition-all duration-500 ${
+            className={`h-1.5 rounded-full transition-all duration-500 ${
               i === index ? "w-8 bg-primary" : "w-2 bg-foreground/20"
             }`}
           />
