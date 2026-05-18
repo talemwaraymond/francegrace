@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Award, HeartHandshake, Lightbulb, ShieldCheck, Sparkles, Users } from "lucide-react";
+import { Award, HeartHandshake, Lightbulb, ShieldCheck, Sparkles, Users, Leaf, FlaskConical, Sparkles as SparklesIcon } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -19,6 +19,14 @@ const values = [
   { icon: Lightbulb, title: "Innovation", text: "Modern formulations grounded in research." },
   { icon: ShieldCheck, title: "Integrity", text: "Honest labels, transparent practices." },
   { icon: Users, title: "Customer Trust", text: "Your wellbeing is our highest priority." },
+];
+
+const whyCards = [
+  { icon: Leaf, title: "Premium Ingredients", text: "Carefully sourced botanicals, vitamins, and minerals selected for purity and potency." },
+  { icon: FlaskConical, title: "Science-Inspired", text: "Modern formulations grounded in nutritional research and clinical wisdom." },
+  { icon: ShieldCheck, title: "Quality Assured", text: "Manufactured under strict GMP standards for consistent quality every batch." },
+  { icon: SparklesIcon, title: "Daily Wellness", text: "Practical formats designed to fit seamlessly into your everyday routine." },
+  { icon: Award, title: "Trusted Brand", text: "Built on transparency, integrity, and a genuine commitment to your wellbeing." },
 ];
 
 function AboutPage() {
@@ -79,6 +87,29 @@ function AboutPage() {
               <p className="mt-2 text-sm text-muted-foreground">{v.text}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* WHY FRANCESHGRACE — moved from homepage */}
+      <section className="bg-emerald-deep text-cream">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Why Franceshgrace</span>
+            <h2 className="mt-3 font-serif text-4xl md:text-5xl">A standard you can feel.</h2>
+            <p className="mt-4 text-cream/80">
+              Five principles guide every formula we make — so the product in your cabinet is one
+              you can trust, every single day.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {whyCards.map((c) => (
+              <div key={c.title} className="rounded-2xl border border-cream/10 bg-cream/5 p-6 backdrop-blur transition-colors hover:bg-cream/10">
+                <c.icon className="h-7 w-7 text-gold" />
+                <h3 className="mt-4 font-serif text-xl text-cream">{c.title}</h3>
+                <p className="mt-2 text-sm text-cream/75">{c.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
