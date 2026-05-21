@@ -1,0 +1,427 @@
+{
+  "%23tanstack-start-plugin-adapters": {
+    "file": "assets/__23tanstack-start-plugin-adapters-Cwee5PKy.js",
+    "name": "__23tanstack-start-plugin-adapters",
+    "src": "%23tanstack-start-plugin-adapters",
+    "isDynamicEntry": true
+  },
+  "/home/runner/work/francegrace/francegrace/src/styles.css": {
+    "file": "assets/styles-DKuDDqs5.css",
+    "src": "/home/runner/work/francegrace/francegrace/src/styles.css"
+  },
+  "_ProductCard-CsGufQwH.js": {
+    "file": "assets/ProductCard-CsGufQwH.js",
+    "name": "ProductCard",
+    "imports": [
+      "_server-C80iBZg-.js",
+      "_router-BeAfsQ71.js",
+      "_arrow-right-CW0FwzET.js"
+    ]
+  },
+  "_arrow-left-CbHVgLJ3.js": {
+    "file": "assets/arrow-left-CbHVgLJ3.js",
+    "name": "arrow-left",
+    "imports": [
+      "_router-BeAfsQ71.js"
+    ]
+  },
+  "_arrow-right-CW0FwzET.js": {
+    "file": "assets/arrow-right-CW0FwzET.js",
+    "name": "arrow-right",
+    "imports": [
+      "_router-BeAfsQ71.js"
+    ]
+  },
+  "_check-BpZ1hf6J.js": {
+    "file": "assets/check-BpZ1hf6J.js",
+    "name": "check",
+    "imports": [
+      "_router-BeAfsQ71.js"
+    ]
+  },
+  "_leaf-CqI_kY91.js": {
+    "file": "assets/leaf-CqI_kY91.js",
+    "name": "leaf",
+    "imports": [
+      "_router-BeAfsQ71.js"
+    ]
+  },
+  "_router-BeAfsQ71.js": {
+    "file": "assets/router-BeAfsQ71.js",
+    "name": "router",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-C80iBZg-.js"
+    ],
+    "dynamicImports": [
+      "src/routes/products.tsx?tsr-split=component",
+      "src/routes/blog.tsx?tsr-split=component",
+      "src/routes/about.tsx?tsr-split=component",
+      "src/routes/index.tsx?tsr-split=component",
+      "src/routes/products.index.tsx?tsr-split=component",
+      "src/routes/blog.index.tsx?tsr-split=component",
+      "src/routes/products.$slug.tsx?tsr-split=component",
+      "src/routes/products.$slug.tsx?tsr-split=errorComponent",
+      "src/routes/products.$slug.tsx?tsr-split=notFoundComponent",
+      "src/routes/blog.$slug.tsx?tsr-split=component",
+      "src/routes/blog.$slug.tsx?tsr-split=errorComponent",
+      "src/routes/blog.$slug.tsx?tsr-split=notFoundComponent"
+    ],
+    "assets": [
+      "assets/product-elderberry-BCL9zhq-.jpg",
+      "assets/product-omega3-Cgkb9kwt.jpg",
+      "assets/product-skin-whitening-BVN3PEdb.jpg",
+      "assets/product-magnesium-triple-D8hZ0y3e.jpg",
+      "assets/product-magnesium-glycinate-xyDSOgQk.jpg",
+      "assets/product-ashwagandha-DQWSISI8.jpg",
+      "assets/product-burn-CCkoFYhK.jpg",
+      "assets/product-maca-DxGgnhas.jpg",
+      "assets/product-uric-acid-ZNoVueAk.jpg",
+      "assets/product-alpha-memory-CKI8lb8p.jpg",
+      "assets/product-activated-charcoal-CVidPMDB.jpg",
+      "assets/product-acne-cleanse-nXptz9Fs.jpg",
+      "assets/product-apple-cider-vinegar-DNuzk2JD.jpg",
+      "assets/product-kelp-TMtCCHgP.jpg",
+      "assets/product-alpha-lipoic-acid-CA-KqEK8.jpg",
+      "assets/product-amino-acid-B3xEjnbv.jpg",
+      "assets/product-amino-strawberry-BTgOx6AA.png",
+      "assets/product-astragalus-BIhXAMvk.png",
+      "assets/product-ashwagandha-2100-DG4TDFC9.png",
+      "assets/product-ashwagandha-500-calming-kiEzscO9.png",
+      "assets/product-ashwagandha-1300-advanced-KUk-b4TQ.png",
+      "assets/product-ashwa-premium-Dx6K-Lmv.png",
+      "assets/product-ashwagandha-5in1-red-6v_dtciv.png",
+      "assets/product-ashwagandha-organic-90-D3bgY-P7.png",
+      "assets/product-ashwagandha-5in1-180-BvNzHKXp.png",
+      "assets/product-ashwagandha-500-extra-j15Nwi4N.png",
+      "assets/product-ashwagandha-extra-500-bioperine-WUSHYqX0.png",
+      "assets/product-ashwagandha-organic-caplets-pGenxe2G.png",
+      "assets/product-ashwagandha-extra-120-bioperine-wpVsLfA_.png",
+      "assets/product-ashwagandha-anxiety-stress-4YE21ZAf.png",
+      "assets/styles-DKuDDqs5.css"
+    ]
+  },
+  "_send-DnpILkcu.js": {
+    "file": "assets/send-DnpILkcu.js",
+    "name": "send",
+    "imports": [
+      "_router-BeAfsQ71.js"
+    ]
+  },
+  "_server-C80iBZg-.js": {
+    "file": "assets/server-C80iBZg-.js",
+    "name": "server",
+    "isDynamicEntry": true,
+    "dynamicImports": [
+      "tanstack-start-manifest:v",
+      "_router-BeAfsQ71.js",
+      "src/start.ts",
+      "%23tanstack-start-plugin-adapters"
+    ]
+  },
+  "_smile-CYQNuDRD.js": {
+    "file": "assets/smile-CYQNuDRD.js",
+    "name": "smile",
+    "imports": [
+      "_router-BeAfsQ71.js"
+    ]
+  },
+  "_sparkles-Bfk2s-nF.js": {
+    "file": "assets/sparkles-Bfk2s-nF.js",
+    "name": "sparkles",
+    "imports": [
+      "_router-BeAfsQ71.js"
+    ]
+  },
+  "_worker-entry-fpRWCPN4.js": {
+    "file": "assets/worker-entry-fpRWCPN4.js",
+    "name": "worker-entry",
+    "dynamicImports": [
+      "_server-C80iBZg-.js"
+    ]
+  },
+  "src/assets/product-acne-cleanse.jpg": {
+    "file": "assets/product-acne-cleanse-nXptz9Fs.jpg",
+    "src": "src/assets/product-acne-cleanse.jpg"
+  },
+  "src/assets/product-activated-charcoal.jpg": {
+    "file": "assets/product-activated-charcoal-CVidPMDB.jpg",
+    "src": "src/assets/product-activated-charcoal.jpg"
+  },
+  "src/assets/product-alpha-lipoic-acid.jpg": {
+    "file": "assets/product-alpha-lipoic-acid-CA-KqEK8.jpg",
+    "src": "src/assets/product-alpha-lipoic-acid.jpg"
+  },
+  "src/assets/product-alpha-memory.jpg": {
+    "file": "assets/product-alpha-memory-CKI8lb8p.jpg",
+    "src": "src/assets/product-alpha-memory.jpg"
+  },
+  "src/assets/product-amino-acid.jpg": {
+    "file": "assets/product-amino-acid-B3xEjnbv.jpg",
+    "src": "src/assets/product-amino-acid.jpg"
+  },
+  "src/assets/product-amino-strawberry.png": {
+    "file": "assets/product-amino-strawberry-BTgOx6AA.png",
+    "src": "src/assets/product-amino-strawberry.png"
+  },
+  "src/assets/product-apple-cider-vinegar.jpg": {
+    "file": "assets/product-apple-cider-vinegar-DNuzk2JD.jpg",
+    "src": "src/assets/product-apple-cider-vinegar.jpg"
+  },
+  "src/assets/product-ashwa-premium.png": {
+    "file": "assets/product-ashwa-premium-Dx6K-Lmv.png",
+    "src": "src/assets/product-ashwa-premium.png"
+  },
+  "src/assets/product-ashwagandha-1300-advanced.png": {
+    "file": "assets/product-ashwagandha-1300-advanced-KUk-b4TQ.png",
+    "src": "src/assets/product-ashwagandha-1300-advanced.png"
+  },
+  "src/assets/product-ashwagandha-2100.png": {
+    "file": "assets/product-ashwagandha-2100-DG4TDFC9.png",
+    "src": "src/assets/product-ashwagandha-2100.png"
+  },
+  "src/assets/product-ashwagandha-500-calming.png": {
+    "file": "assets/product-ashwagandha-500-calming-kiEzscO9.png",
+    "src": "src/assets/product-ashwagandha-500-calming.png"
+  },
+  "src/assets/product-ashwagandha-500-extra.png": {
+    "file": "assets/product-ashwagandha-500-extra-j15Nwi4N.png",
+    "src": "src/assets/product-ashwagandha-500-extra.png"
+  },
+  "src/assets/product-ashwagandha-5in1-180.png": {
+    "file": "assets/product-ashwagandha-5in1-180-BvNzHKXp.png",
+    "src": "src/assets/product-ashwagandha-5in1-180.png"
+  },
+  "src/assets/product-ashwagandha-5in1-red.png": {
+    "file": "assets/product-ashwagandha-5in1-red-6v_dtciv.png",
+    "src": "src/assets/product-ashwagandha-5in1-red.png"
+  },
+  "src/assets/product-ashwagandha-anxiety-stress.png": {
+    "file": "assets/product-ashwagandha-anxiety-stress-4YE21ZAf.png",
+    "src": "src/assets/product-ashwagandha-anxiety-stress.png"
+  },
+  "src/assets/product-ashwagandha-extra-120-bioperine.png": {
+    "file": "assets/product-ashwagandha-extra-120-bioperine-wpVsLfA_.png",
+    "src": "src/assets/product-ashwagandha-extra-120-bioperine.png"
+  },
+  "src/assets/product-ashwagandha-extra-500-bioperine.png": {
+    "file": "assets/product-ashwagandha-extra-500-bioperine-WUSHYqX0.png",
+    "src": "src/assets/product-ashwagandha-extra-500-bioperine.png"
+  },
+  "src/assets/product-ashwagandha-organic-90.png": {
+    "file": "assets/product-ashwagandha-organic-90-D3bgY-P7.png",
+    "src": "src/assets/product-ashwagandha-organic-90.png"
+  },
+  "src/assets/product-ashwagandha-organic-caplets.png": {
+    "file": "assets/product-ashwagandha-organic-caplets-pGenxe2G.png",
+    "src": "src/assets/product-ashwagandha-organic-caplets.png"
+  },
+  "src/assets/product-ashwagandha.jpg": {
+    "file": "assets/product-ashwagandha-DQWSISI8.jpg",
+    "src": "src/assets/product-ashwagandha.jpg"
+  },
+  "src/assets/product-astragalus.png": {
+    "file": "assets/product-astragalus-BIhXAMvk.png",
+    "src": "src/assets/product-astragalus.png"
+  },
+  "src/assets/product-burn.jpg": {
+    "file": "assets/product-burn-CCkoFYhK.jpg",
+    "src": "src/assets/product-burn.jpg"
+  },
+  "src/assets/product-elderberry.jpg": {
+    "file": "assets/product-elderberry-BCL9zhq-.jpg",
+    "src": "src/assets/product-elderberry.jpg"
+  },
+  "src/assets/product-kelp.jpg": {
+    "file": "assets/product-kelp-TMtCCHgP.jpg",
+    "src": "src/assets/product-kelp.jpg"
+  },
+  "src/assets/product-maca.jpg": {
+    "file": "assets/product-maca-DxGgnhas.jpg",
+    "src": "src/assets/product-maca.jpg"
+  },
+  "src/assets/product-magnesium-glycinate.jpg": {
+    "file": "assets/product-magnesium-glycinate-xyDSOgQk.jpg",
+    "src": "src/assets/product-magnesium-glycinate.jpg"
+  },
+  "src/assets/product-magnesium-triple.jpg": {
+    "file": "assets/product-magnesium-triple-D8hZ0y3e.jpg",
+    "src": "src/assets/product-magnesium-triple.jpg"
+  },
+  "src/assets/product-omega3.jpg": {
+    "file": "assets/product-omega3-Cgkb9kwt.jpg",
+    "src": "src/assets/product-omega3.jpg"
+  },
+  "src/assets/product-skin-whitening.jpg": {
+    "file": "assets/product-skin-whitening-BVN3PEdb.jpg",
+    "src": "src/assets/product-skin-whitening.jpg"
+  },
+  "src/assets/product-uric-acid.jpg": {
+    "file": "assets/product-uric-acid-ZNoVueAk.jpg",
+    "src": "src/assets/product-uric-acid.jpg"
+  },
+  "src/routes/about.tsx?tsr-split=component": {
+    "file": "assets/about-CnTqgb09.js",
+    "name": "about",
+    "src": "src/routes/about.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-C80iBZg-.js",
+      "_sparkles-Bfk2s-nF.js",
+      "_router-BeAfsQ71.js",
+      "_leaf-CqI_kY91.js"
+    ]
+  },
+  "src/routes/blog.$slug.tsx?tsr-split=component": {
+    "file": "assets/blog._slug-CaTQ5TU5.js",
+    "name": "blog._slug",
+    "src": "src/routes/blog.$slug.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-C80iBZg-.js",
+      "_router-BeAfsQ71.js",
+      "_arrow-left-CbHVgLJ3.js",
+      "_check-BpZ1hf6J.js"
+    ]
+  },
+  "src/routes/blog.$slug.tsx?tsr-split=errorComponent": {
+    "file": "assets/blog._slug-BV5V24WB.js",
+    "name": "blog._slug",
+    "src": "src/routes/blog.$slug.tsx?tsr-split=errorComponent",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-C80iBZg-.js"
+    ]
+  },
+  "src/routes/blog.$slug.tsx?tsr-split=notFoundComponent": {
+    "file": "assets/blog._slug-DOkuB16o.js",
+    "name": "blog._slug",
+    "src": "src/routes/blog.$slug.tsx?tsr-split=notFoundComponent",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-C80iBZg-.js",
+      "_router-BeAfsQ71.js",
+      "_arrow-left-CbHVgLJ3.js"
+    ]
+  },
+  "src/routes/blog.index.tsx?tsr-split=component": {
+    "file": "assets/blog.index-DQWVaEol.js",
+    "name": "blog.index",
+    "src": "src/routes/blog.index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-C80iBZg-.js",
+      "_router-BeAfsQ71.js"
+    ]
+  },
+  "src/routes/blog.tsx?tsr-split=component": {
+    "file": "assets/blog-AIVf-UFb.js",
+    "name": "blog",
+    "src": "src/routes/blog.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-C80iBZg-.js"
+    ]
+  },
+  "src/routes/index.tsx?tsr-split=component": {
+    "file": "assets/index-BJ3jnwmV.js",
+    "name": "index",
+    "src": "src/routes/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-C80iBZg-.js",
+      "_router-BeAfsQ71.js",
+      "_sparkles-Bfk2s-nF.js",
+      "_arrow-right-CW0FwzET.js",
+      "_check-BpZ1hf6J.js",
+      "_send-DnpILkcu.js",
+      "_leaf-CqI_kY91.js",
+      "_smile-CYQNuDRD.js"
+    ]
+  },
+  "src/routes/products.$slug.tsx?tsr-split=component": {
+    "file": "assets/products._slug-BpubQaZm.js",
+    "name": "products._slug",
+    "src": "src/routes/products.$slug.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-C80iBZg-.js",
+      "_router-BeAfsQ71.js",
+      "_ProductCard-CsGufQwH.js",
+      "_arrow-left-CbHVgLJ3.js",
+      "_check-BpZ1hf6J.js",
+      "_send-DnpILkcu.js",
+      "_leaf-CqI_kY91.js",
+      "_arrow-right-CW0FwzET.js"
+    ]
+  },
+  "src/routes/products.$slug.tsx?tsr-split=errorComponent": {
+    "file": "assets/products._slug-DZatXRLg.js",
+    "name": "products._slug",
+    "src": "src/routes/products.$slug.tsx?tsr-split=errorComponent",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-C80iBZg-.js"
+    ]
+  },
+  "src/routes/products.$slug.tsx?tsr-split=notFoundComponent": {
+    "file": "assets/products._slug-mQHmEDA-.js",
+    "name": "products._slug",
+    "src": "src/routes/products.$slug.tsx?tsr-split=notFoundComponent",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-C80iBZg-.js",
+      "_router-BeAfsQ71.js",
+      "_arrow-left-CbHVgLJ3.js"
+    ]
+  },
+  "src/routes/products.index.tsx?tsr-split=component": {
+    "file": "assets/products.index-DlhDhdxS.js",
+    "name": "products.index",
+    "src": "src/routes/products.index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-C80iBZg-.js",
+      "_router-BeAfsQ71.js",
+      "_ProductCard-CsGufQwH.js",
+      "_smile-CYQNuDRD.js",
+      "_leaf-CqI_kY91.js",
+      "_sparkles-Bfk2s-nF.js",
+      "_arrow-right-CW0FwzET.js"
+    ]
+  },
+  "src/routes/products.tsx?tsr-split=component": {
+    "file": "assets/products-AIVf-UFb.js",
+    "name": "products",
+    "src": "src/routes/products.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_server-C80iBZg-.js"
+    ]
+  },
+  "src/start.ts": {
+    "file": "assets/start-DrzjZHh6.js",
+    "name": "start",
+    "src": "src/start.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_worker-entry-fpRWCPN4.js",
+      "_server-C80iBZg-.js"
+    ]
+  },
+  "tanstack-start-manifest:v": {
+    "file": "assets/_tanstack-start-manifest_v-Dt5dVAtg.js",
+    "name": "_tanstack-start-manifest_v",
+    "src": "tanstack-start-manifest:v",
+    "isDynamicEntry": true
+  },
+  "virtual:cloudflare/worker-entry": {
+    "file": "index.js",
+    "name": "index",
+    "src": "virtual:cloudflare/worker-entry",
+    "isEntry": true,
+    "imports": [
+      "_worker-entry-fpRWCPN4.js"
+    ]
+  }
+}
