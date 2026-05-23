@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
-import { Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export function Footer() {
   return (
