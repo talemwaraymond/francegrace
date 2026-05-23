@@ -1,0 +1,16 @@
+import { H as jsxRuntimeExports } from "./server-ufRaRBaD.js";
+import { L as Link } from "./router-Cpm7GH_Y.js";
+import { A as ArrowLeft } from "./arrow-left-afko82C_.js";
+import "node:async_hooks";
+import "node:stream/web";
+import "node:stream";
+const SplitNotFoundComponent = () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-3xl px-4 py-24 text-center", children: [
+  /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "font-serif text-4xl", children: "Product not found" }),
+  /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/products", className: "mt-6 inline-flex items-center gap-2 text-primary hover:underline", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "h-4 w-4" }),
+    " Back to all products"
+  ] })
+] });
+export {
+  SplitNotFoundComponent as notFoundComponent
+};

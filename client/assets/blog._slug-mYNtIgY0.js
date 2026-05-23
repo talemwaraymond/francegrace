@@ -1,1 +1,0 @@
-import{j as e}from"./index-C81hIXol.js";const s=({error:t})=>e.jsxs("div",{className:"mx-auto max-w-3xl px-4 py-24 text-center",children:[e.jsx("h1",{className:"font-serif text-3xl",children:"Something went wrong"}),e.jsx("p",{className:"mt-3 text-muted-foreground",children:t.message})]});export{s as errorComponent};
