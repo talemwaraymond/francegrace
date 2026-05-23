@@ -1,8 +1,6 @@
-import { X, Check, Send, ExternalLink } from "lucide-react";
+import { X, Check, ExternalLink } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import type { Product } from "@/data/products";
-
-const WA = "https://wa.me/8619566806560";
 
 export function ProductDetailPanel({
   product,
@@ -113,14 +111,6 @@ export function ProductDetailPanel({
 
           {/* Actions */}
           <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href={`${WA}?text=${encodeURIComponent(`Hello Franceshgrace, I'd like more info on ${product.name}.`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-emerald-deep hover:shadow-md"
-            >
-              Send Inquiry for This Product <Send className="h-4 w-4" />
-            </a>
             <Link
               to="/products/$slug"
               params={{ slug: product.slug }}

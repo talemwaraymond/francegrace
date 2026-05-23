@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { Check, Leaf, Send, ArrowLeft } from "lucide-react";
+import { Check, Leaf, ArrowLeft } from "lucide-react";
 import { getProduct, relatedProducts, type Product } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
 
@@ -68,11 +68,6 @@ function ProductDetail() {
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="https://wa.me/8619566806560" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-emerald-deep">
-                Inquire on WhatsApp <Send className="h-4 w-4" />
-              </a>
-            </div>
           </div>
         </div>
       </section>
