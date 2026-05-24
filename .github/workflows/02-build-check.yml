@@ -1,0 +1,34 @@
+name: 02 Build Check
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      VITE_SUPABASE_URL: https://ktxlvltheygbhyypnjep.supabase.co
+      VITE_SUPABASE_PUBLISHABLE_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt0eGx2bHRoZXlnYmh5eXBuamVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk1NzkzOTksImV4cCI6MjA5NTE1NTM5OX0.DlTbp9mwS7c88UqgICmkViuf2TlKlR-efnsxFT2BBvY
+      VITE_SUPABASE_PROJECT_ID: ktxlvltheygbhyypnjep
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build for GitHub Pages
+        run: npm run build:github-pages
+
+      - name: Confirm build completed
+        run: |
+          echo "Build completed."
+          ls -la dist/client | head -20
