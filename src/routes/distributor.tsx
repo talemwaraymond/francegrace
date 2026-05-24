@@ -1,6 +1,7 @@
 import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
+import type { FormEvent } from "react";
 import { submitInquiry } from "@/lib/inquiry.functions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,8 +20,7 @@ export const Route = createFileRoute("/distributor")({
       { property: "og:title", content: "Become a Distributor — Franceshgrace" },
       {
         property: "og:description",
-        content:
-          "Partner with Franceshgrace to distribute premium wellness supplements worldwide.",
+        content: "Partner with Franceshgrace to distribute premium wellness supplements worldwide.",
       },
     ],
   }),
@@ -34,7 +34,7 @@ function DistributorPage() {
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError(null);
     setSubmitting(true);
@@ -62,9 +62,7 @@ function DistributorPage() {
 
   return (
     <section className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-      <h1 className="font-display text-4xl sm:text-5xl tracking-tight">
-        Become a Distributor
-      </h1>
+      <h1 className="font-display text-4xl sm:text-5xl tracking-tight">Become a Distributor</h1>
       <p className="mt-4 text-muted-foreground">
         Tell us about your business and we'll be in touch within 48 hours.
       </p>
@@ -106,9 +104,7 @@ function DistributorPage() {
             <Label htmlFor="message">Message *</Label>
             <Textarea id="message" name="message" required rows={5} maxLength={2000} />
           </div>
-          {error ? (
-            <p className="sm:col-span-2 text-sm text-destructive">{error}</p>
-          ) : null}
+          {error ? <p className="sm:col-span-2 text-sm text-destructive">{error}</p> : null}
           <div className="sm:col-span-2">
             <Button type="submit" disabled={submitting} size="lg">
               {submitting ? "Submitting…" : "Submit inquiry"}

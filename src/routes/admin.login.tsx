@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useState } from "react";
+import type { FormEvent } from "react";
 import { verifyAdmin } from "@/lib/admin.functions";
 import { setAdminToken, getAdminToken } from "@/lib/admin-session";
 import { Button } from "@/components/ui/button";
@@ -22,7 +23,7 @@ function AdminLogin() {
     if (getAdminToken()) navigate({ to: "/admin" });
   }, [navigate]);
 
-  async function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: FormEvent) {
     e.preventDefault();
     setError(null);
     setLoading(true);
@@ -44,9 +45,7 @@ function AdminLogin() {
         className="w-full max-w-sm rounded-xl border bg-background p-8 shadow-sm"
       >
         <h1 className="font-display text-2xl">Admin sign in</h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Franceshgrace admin dashboard
-        </p>
+        <p className="mt-1 text-sm text-muted-foreground">Franceshgrace admin dashboard</p>
         <div className="mt-6 space-y-2">
           <Label htmlFor="password">Password</Label>
           <Input

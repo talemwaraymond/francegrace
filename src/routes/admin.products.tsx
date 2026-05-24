@@ -2,11 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
-import {
-  adminListProducts,
-  adminUpsertProduct,
-  adminDeleteProduct,
-} from "@/lib/admin.functions";
+import type { FormEvent } from "react";
+import { adminListProducts, adminUpsertProduct, adminDeleteProduct } from "@/lib/admin.functions";
 import { getAdminToken } from "@/lib/admin-session";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -35,7 +32,10 @@ export const Route = createFileRoute("/admin/products")({
 });
 
 function lines(v: string) {
-  return v.split("\n").map((s) => s.trim()).filter(Boolean);
+  return v
+    .split("\n")
+    .map((s) => s.trim())
+    .filter(Boolean);
 }
 
 function AdminProducts() {
@@ -74,7 +74,7 @@ function AdminProducts() {
     setOpen(true);
   }
 
-  async function save(e: React.FormEvent<HTMLFormElement>) {
+  async function save(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!editing) return;
     const fd = new FormData(e.currentTarget);
@@ -87,21 +87,19 @@ function AdminProducts() {
       size: String(fd.get("size") || ""),
       use: String(fd.get("use") || ""),
       image_key: String(fd.get("image_key") || ""),
-      status: (String(fd.get("status") || "active") as "active" | "hidden"),
+      status: String(fd.get("status") || "active") as "active" | "hidden",
       featured_in_hero: fd.get("featured_in_hero") === "on",
       display_order: Number(fd.get("display_order") || 0),
       description: lines(String(fd.get("description") || "")),
       benefits: lines(String(fd.get("benefits") || "")),
-      facts: lines(String(fd.get("facts") || ""))
-        .map((l) => {
-          const [label, ...rest] = l.split("|");
-          return { label: label.trim(), value: rest.join("|").trim() };
-        }),
-      ingredients: lines(String(fd.get("ingredients") || ""))
-        .map((l) => {
-          const [name, ...rest] = l.split("|");
-          return { name: name.trim(), description: rest.join("|").trim() };
-        }),
+      facts: lines(String(fd.get("facts") || "")).map((l) => {
+        const [label, ...rest] = l.split("|");
+        return { label: label.trim(), value: rest.join("|").trim() };
+      }),
+      ingredients: lines(String(fd.get("ingredients") || "")).map((l) => {
+        const [name, ...rest] = l.split("|");
+        return { name: name.trim(), description: rest.join("|").trim() };
+      }),
       support: editing.support,
     };
     await upsert({
@@ -123,11 +121,12 @@ function AdminProducts() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="font-display text-3xl">Products</h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Manage your product catalog.
-          </p>
+          <p className="mt-1 text-sm text-muted-foreground">Manage your product catalog.</p>
         </div>
-        <Button onClick={startNew}><Plus className="mr-1 h-4 w-4" />New product</Button>
+        <Button onClick={startNew}>
+          <Plus className="mr-1 h-4 w-4" />
+          New product
+        </Button>
       </div>
 
       <div className="mt-8 rounded-lg border bg-background">
@@ -143,27 +142,34 @@ function AdminProducts() {
           </TableHeader>
           <TableBody>
             {isLoading ? (
-              <TableRow><TableCell colSpan={5}>Loading…</TableCell></TableRow>
-            ) : (data ?? []).map((p) => (
-              <TableRow key={p.id}>
-                <TableCell className="font-medium">{p.name}</TableCell>
-                <TableCell>{p.category}</TableCell>
-                <TableCell>{p.status}</TableCell>
-                <TableCell>{p.display_order}</TableCell>
-                <TableCell className="text-right">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => { setEditing(p); setOpen(true); }}
-                  >
-                    <Pencil className="h-4 w-4" />
-                  </Button>
-                  <Button variant="ghost" size="icon" onClick={() => remove(p.id)}>
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
-                </TableCell>
+              <TableRow>
+                <TableCell colSpan={5}>Loading…</TableCell>
               </TableRow>
-            ))}
+            ) : (
+              (data ?? []).map((p) => (
+                <TableRow key={p.id}>
+                  <TableCell className="font-medium">{p.name}</TableCell>
+                  <TableCell>{p.category}</TableCell>
+                  <TableCell>{p.status}</TableCell>
+                  <TableCell>{p.display_order}</TableCell>
+                  <TableCell className="text-right">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => {
+                        setEditing(p);
+                        setOpen(true);
+                      }}
+                    >
+                      <Pencil className="h-4 w-4" />
+                    </Button>
+                    <Button variant="ghost" size="icon" onClick={() => remove(p.id)}>
+                      <Trash2 className="h-4 w-4" />
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))
+            )}
           </TableBody>
         </Table>
       </div>
@@ -209,20 +215,14 @@ function AdminProducts() {
               </div>
               <div className="sm:col-span-2">
                 <Label>Benefits (one per line)</Label>
-                <Textarea
-                  name="benefits"
-                  rows={4}
-                  defaultValue={editing.benefits.join("\n")}
-                />
+                <Textarea name="benefits" rows={4} defaultValue={editing.benefits.join("\n")} />
               </div>
               <div className="sm:col-span-2">
                 <Label>Facts (label | value per line)</Label>
                 <Textarea
                   name="facts"
                   rows={4}
-                  defaultValue={editing.facts
-                    .map((f) => `${f.label} | ${f.value}`)
-                    .join("\n")}
+                  defaultValue={editing.facts.map((f) => `${f.label} | ${f.value}`).join("\n")}
                 />
               </div>
               <div className="sm:col-span-2">
@@ -245,11 +245,7 @@ function AdminProducts() {
               </div>
               <div>
                 <Label>Display order</Label>
-                <Input
-                  type="number"
-                  name="display_order"
-                  defaultValue={editing.display_order}
-                />
+                <Input type="number" name="display_order" defaultValue={editing.display_order} />
               </div>
               <div>
                 <Label>Status</Label>
