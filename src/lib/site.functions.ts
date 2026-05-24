@@ -79,17 +79,14 @@ export const listAllPosts = createServerFn({ method: "GET" }).handler(
 
 export const getSiteSettings = createServerFn({ method: "GET" }).handler(
   async (): Promise<SiteSettingsDTO> => {
-    const { data, error } = await supabaseAdmin
-      .from("site_settings")
-      .select("key,value");
+    const { data, error } = await supabaseAdmin.from("site_settings").select("key,value");
     if (error) throw new Error(error.message);
     const map: Record<string, string> = {};
     (data ?? []).forEach((r) => (map[r.key] = r.value));
     return {
       contact_email: map.contact_email ?? "franceshgrace123@gmail.com",
       footer_disclaimer:
-        map.footer_disclaimer ??
-        "These statements have not been evaluated by health authorities.",
+        map.footer_disclaimer ?? "These statements have not been evaluated by health authorities.",
       instagram_url: map.instagram_url ?? "",
       facebook_url: map.facebook_url ?? "",
       linkedin_url: map.linkedin_url ?? "",
