@@ -33,6 +33,12 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Build static site
+        env:
+          VITE_SUPABASE_URL: https://ktxlvltheygbhyypnjep.supabase.co
+          VITE_SUPABASE_PUBLISHABLE_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt0eGx2bHRoZXlnYmh5eXBuamVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk1NzkzOTksImV4cCI6MjA5NTE1NTM5OX0.DlTbp9mwS7c88UqgICmkViuf2TlKlR-efnsxFT2BBvY
+          VITE_SUPABASE_PROJECT_ID: ktxlvltheygbhyypnjep
+          SUPABASE_URL: https://ktxlvltheygbhyypnjep.supabase.co
+          SUPABASE_PUBLISHABLE_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt0eGx2bHRoZXlnYmh5eXBuamVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk1NzkzOTksImV4cCI6MjA5NTE1NTM5OX0.DlTbp9mwS7c88UqgICmkViuf2TlKlR-efnsxFT2BBvY
         run: bun run build:github-pages
 
       - name: Upload Pages artifact
