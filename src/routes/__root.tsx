@@ -13,7 +13,6 @@ import appCss from "../styles.css?url";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -77,17 +76,40 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Franceshgrace — Premium Wellness, Crafted with Intention" },
-      { name: "description", content: "Premium wellness supplements crafted with carefully selected ingredients and modern formulations. Wellness backed by nature and science." },
+      {
+        name: "description",
+        content:
+          "Premium wellness supplements crafted with carefully selected ingredients and modern formulations. Wellness backed by nature and science.",
+      },
       { name: "author", content: "Franceshgrace" },
       { property: "og:title", content: "Franceshgrace — Premium Wellness, Crafted with Intention" },
-      { property: "og:description", content: "Premium wellness supplements crafted with carefully selected ingredients and modern formulations. Wellness backed by nature and science." },
+      {
+        property: "og:description",
+        content:
+          "Premium wellness supplements crafted with carefully selected ingredients and modern formulations. Wellness backed by nature and science.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Franceshgrace — Premium Wellness, Crafted with Intention" },
-      { name: "twitter:description", content: "Premium wellness supplements crafted with carefully selected ingredients and modern formulations. Wellness backed by nature and science." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f24c1bd8-42de-409b-babe-0c7983040e69/id-preview-5c9b848b--a8e40a25-5257-43d7-bc0f-e1cd8c8f2f0e.lovable.app-1778602568148.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f24c1bd8-42de-409b-babe-0c7983040e69/id-preview-5c9b848b--a8e40a25-5257-43d7-bc0f-e1cd8c8f2f0e.lovable.app-1778602568148.png" },
+      {
+        name: "twitter:title",
+        content: "Franceshgrace — Premium Wellness, Crafted with Intention",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Premium wellness supplements crafted with carefully selected ingredients and modern formulations. Wellness backed by nature and science.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f24c1bd8-42de-409b-babe-0c7983040e69/id-preview-5c9b848b--a8e40a25-5257-43d7-bc0f-e1cd8c8f2f0e.lovable.app-1778602568148.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f24c1bd8-42de-409b-babe-0c7983040e69/id-preview-5c9b848b--a8e40a25-5257-43d7-bc0f-e1cd8c8f2f0e.lovable.app-1778602568148.png",
+      },
     ],
     links: [
       {
