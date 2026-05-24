@@ -26,13 +26,13 @@ function AdminLayout() {
   if (isLogin) return <Outlet />;
   if (!ready) return null;
 
-  const nav = [
+  const nav: { to: string; label: string; icon: typeof LayoutDashboard; exact?: boolean }[] = [
     { to: "/admin", label: "Overview", icon: LayoutDashboard, exact: true },
     { to: "/admin/products", label: "Products", icon: Package },
     { to: "/admin/blog", label: "Blog", icon: FileText },
     { to: "/admin/inquiries", label: "Inquiries", icon: Inbox },
     { to: "/admin/settings", label: "Settings", icon: Settings },
-  ] as const;
+  ];
 
   return (
     <div className="flex min-h-screen bg-muted/30">
