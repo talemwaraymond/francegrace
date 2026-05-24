@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useState } from "react";
+import type { FormEvent } from "react";
 import { verifyAdmin } from "@/lib/admin.functions";
 import { setAdminToken, getAdminToken } from "@/lib/admin-session";
 import { Button } from "@/components/ui/button";
@@ -22,7 +23,7 @@ function AdminLogin() {
     if (getAdminToken()) navigate({ to: "/admin" });
   }, [navigate]);
 
-  async function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: FormEvent) {
     e.preventDefault();
     setError(null);
     setLoading(true);

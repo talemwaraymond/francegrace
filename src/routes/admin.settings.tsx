@@ -5,6 +5,7 @@ import { adminUpdateSettings } from "@/lib/admin.functions";
 import { getSiteSettings } from "@/lib/site.functions";
 import { getAdminToken } from "@/lib/admin-session";
 import { useState, useEffect } from "react";
+import type { FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -37,7 +38,7 @@ function AdminSettings() {
     if (data) setForm(data);
   }, [data]);
 
-  async function save(e: React.FormEvent) {
+  async function save(e: FormEvent) {
     e.preventDefault();
     setSaving(true);
     setSaved(false);
