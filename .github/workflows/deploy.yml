@@ -1,0 +1,69 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          NODE_ENV: production
+          CI: false
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
+          VITE_SUPABASE_PROJECT_ID: ${{ secrets.VITE_SUPABASE_PROJECT_ID }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+
+      - name: Prepare Pages output
+        run: |
+          if [ -d dist/client ]; then
+            cp -R dist/client/. dist/
+          fi
+
+      - name: Add CNAME
+        run: echo "www.franceshgrace.com" > dist/CNAME
+
+      - name: Add sitemap
+        run: |
+          cat > dist/sitemap.xml << 'EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url><loc>https://www.franceshgrace.com/</loc><priority>1.0</priority></url>
+            <url><loc>https://www.franceshgrace.com/products</loc><priority>0.9</priority></url>
+            <url><loc>https://www.franceshgrace.com/about</loc><priority>0.7</priority></url>
+            <url><loc>https://www.franceshgrace.com/distributor</loc><priority>0.8</priority></url>
+            <url><loc>https://www.franceshgrace.com/blog</loc><priority>0.8</priority></url>
+          </urlset>
+          EOF
+
+      - name: Add robots.txt
+        run: |
+          echo "User-agent: *
+          Allow: /
+          Sitemap: https://www.franceshgrace.com/sitemap.xml" > dist/robots.txt
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
