@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
+import type { FormEvent } from "react";
 import {
   adminListProducts,
   adminUpsertProduct,
@@ -74,7 +75,7 @@ function AdminProducts() {
     setOpen(true);
   }
 
-  async function save(e: React.FormEvent<HTMLFormElement>) {
+  async function save(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!editing) return;
     const fd = new FormData(e.currentTarget);
