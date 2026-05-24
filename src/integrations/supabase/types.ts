@@ -121,6 +121,7 @@ export type Database = {
           size: string
           slug: string
           status: string
+          support: Json
           tagline: string
           updated_at: string
           use: string
@@ -141,6 +142,7 @@ export type Database = {
           size?: string
           slug: string
           status?: string
+          support?: Json
           tagline?: string
           updated_at?: string
           use?: string
@@ -161,6 +163,7 @@ export type Database = {
           size?: string
           slug?: string
           status?: string
+          support?: Json
           tagline?: string
           updated_at?: string
           use?: string
