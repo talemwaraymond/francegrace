@@ -14,7 +14,177 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blog_posts: {
+        Row: {
+          author: string
+          body: Json
+          category: string
+          created_at: string
+          excerpt: string
+          id: string
+          image_key: string
+          published_at: string
+          read_minutes: number
+          slug: string
+          status: string
+          takeaways: Json
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author?: string
+          body?: Json
+          category: string
+          created_at?: string
+          excerpt?: string
+          id?: string
+          image_key?: string
+          published_at?: string
+          read_minutes?: number
+          slug: string
+          status?: string
+          takeaways?: Json
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author?: string
+          body?: Json
+          category?: string
+          created_at?: string
+          excerpt?: string
+          id?: string
+          image_key?: string
+          published_at?: string
+          read_minutes?: number
+          slug?: string
+          status?: string
+          takeaways?: Json
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      inquiries: {
+        Row: {
+          company: string
+          country: string
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          is_read: boolean
+          message: string
+          phone: string
+          product_interest: string
+        }
+        Insert: {
+          company?: string
+          country?: string
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          is_read?: boolean
+          message?: string
+          phone?: string
+          product_interest?: string
+        }
+        Update: {
+          company?: string
+          country?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          is_read?: boolean
+          message?: string
+          phone?: string
+          product_interest?: string
+        }
+        Relationships: []
+      }
+      products: {
+        Row: {
+          benefits: Json
+          category: string
+          created_at: string
+          description: Json
+          display_order: number
+          facts: Json
+          featured_in_hero: boolean
+          id: string
+          image_key: string
+          ingredients: Json
+          name: string
+          short: string
+          size: string
+          slug: string
+          status: string
+          tagline: string
+          updated_at: string
+          use: string
+        }
+        Insert: {
+          benefits?: Json
+          category: string
+          created_at?: string
+          description?: Json
+          display_order?: number
+          facts?: Json
+          featured_in_hero?: boolean
+          id?: string
+          image_key?: string
+          ingredients?: Json
+          name: string
+          short?: string
+          size?: string
+          slug: string
+          status?: string
+          tagline?: string
+          updated_at?: string
+          use?: string
+        }
+        Update: {
+          benefits?: Json
+          category?: string
+          created_at?: string
+          description?: Json
+          display_order?: number
+          facts?: Json
+          featured_in_hero?: boolean
+          id?: string
+          image_key?: string
+          ingredients?: Json
+          name?: string
+          short?: string
+          size?: string
+          slug?: string
+          status?: string
+          tagline?: string
+          updated_at?: string
+          use?: string
+        }
+        Relationships: []
+      }
+      site_settings: {
+        Row: {
+          key: string
+          updated_at: string
+          value: string
+        }
+        Insert: {
+          key: string
+          updated_at?: string
+          value?: string
+        }
+        Update: {
+          key?: string
+          updated_at?: string
+          value?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
