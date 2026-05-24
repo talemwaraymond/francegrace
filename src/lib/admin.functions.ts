@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
+import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import type { ProductDTO, BlogPostDTO, InquiryDTO } from "./types";
 
 function checkAdmin(token: string | undefined) {
@@ -11,6 +12,7 @@ function checkAdmin(token: string | undefined) {
   }
 }
 
+// Old shared-password verify — kept for backwards compat (unused by UI).
 export const verifyAdmin = createServerFn({ method: "POST" })
   .inputValidator((input) =>
     z.object({ password: z.string().min(1).max(200) }).parse(input),
@@ -20,6 +22,17 @@ export const verifyAdmin = createServerFn({ method: "POST" })
       throw new Error("Invalid password");
     }
     return { ok: true };
+  });
+
+// Called after Supabase email/password sign-in. Auth is verified via the
+// bearer token; on success returns the admin token used by the other server
+// fns (avoids refactoring every admin page).
+export const adminBootstrap = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .handler(async () => {
+    const token = process.env.ADMIN_PASSWORD;
+    if (!token) throw new Error("ADMIN_PASSWORD not configured");
+    return { token };
   });
 
 // ============== READS (admin sees all rows) ==============
