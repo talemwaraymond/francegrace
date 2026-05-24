@@ -46,8 +46,9 @@ export function Footer() {
             These statements have not been evaluated by health authorities. These products are not
             intended to diagnose, treat, cure, or prevent any disease.
           </p>
-          <p className="mt-4 text-xs text-cream/50">
-            © {new Date().getFullYear()} Franceshgrace. All rights reserved.
+          <p className="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs text-cream/50">
+            <span>© {new Date().getFullYear()} Franceshgrace. All rights reserved.</span>
+            <Link to="/admin/login" className="text-cream/50 hover:text-gold">Admin Sign In</Link>
           </p>
         </div>
       </div>
