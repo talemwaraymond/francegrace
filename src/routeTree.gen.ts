@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProductsRouteImport } from './routes/products'
+import { Route as DistributorRouteImport } from './routes/distributor'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -27,6 +28,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const ProductsRoute = ProductsRouteImport.update({
   id: '/products',
   path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DistributorRoute = DistributorRouteImport.update({
+  id: '/distributor',
+  path: '/distributor',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
+  '/distributor': typeof DistributorRoute
   '/products': typeof ProductsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -79,6 +86,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/distributor': typeof DistributorRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
@@ -90,6 +98,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
+  '/distributor': typeof DistributorRoute
   '/products': typeof ProductsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -103,6 +112,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/blog'
+    | '/distributor'
     | '/products'
     | '/sitemap.xml'
     | '/blog/$slug'
@@ -113,6 +123,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/distributor'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/products/$slug'
@@ -123,6 +134,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/blog'
+    | '/distributor'
     | '/products'
     | '/sitemap.xml'
     | '/blog/$slug'
@@ -135,6 +147,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRouteWithChildren
+  DistributorRoute: typeof DistributorRoute
   ProductsRoute: typeof ProductsRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -153,6 +166,13 @@ declare module '@tanstack/react-router' {
       path: '/products'
       fullPath: '/products'
       preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/distributor': {
+      id: '/distributor'
+      path: '/distributor'
+      fullPath: '/distributor'
+      preLoaderRoute: typeof DistributorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -237,6 +257,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BlogRoute: BlogRouteWithChildren,
+  DistributorRoute: DistributorRoute,
   ProductsRoute: ProductsRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
