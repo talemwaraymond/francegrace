@@ -1,0 +1,1 @@
+const n="fsg_admin_token";function o(){return typeof window>"u"?null:window.localStorage.getItem(n)}function t(e){typeof window>"u"||window.localStorage.setItem(n,e)}function i(){typeof window>"u"||window.localStorage.removeItem(n)}export{i as c,o as g,t as s};
