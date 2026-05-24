@@ -21,6 +21,7 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as AdminProductsRouteImport } from './routes/admin.products'
 import { Route as AdminLoginRouteImport } from './routes/admin.login'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -83,6 +84,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
+const AdminProductsRoute = AdminProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminLoginRoute = AdminLoginRouteImport.update({
   id: '/login',
   path: '/login',
@@ -98,6 +104,7 @@ export interface FileRoutesByFullPath {
   '/products': typeof ProductsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/login': typeof AdminLoginRoute
+  '/admin/products': typeof AdminProductsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/admin/': typeof AdminIndexRoute
@@ -110,6 +117,7 @@ export interface FileRoutesByTo {
   '/distributor': typeof DistributorRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/login': typeof AdminLoginRoute
+  '/admin/products': typeof AdminProductsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/admin': typeof AdminIndexRoute
@@ -126,6 +134,7 @@ export interface FileRoutesById {
   '/products': typeof ProductsRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/login': typeof AdminLoginRoute
+  '/admin/products': typeof AdminProductsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/admin/': typeof AdminIndexRoute
@@ -143,6 +152,7 @@ export interface FileRouteTypes {
     | '/products'
     | '/sitemap.xml'
     | '/admin/login'
+    | '/admin/products'
     | '/blog/$slug'
     | '/products/$slug'
     | '/admin/'
@@ -155,6 +165,7 @@ export interface FileRouteTypes {
     | '/distributor'
     | '/sitemap.xml'
     | '/admin/login'
+    | '/admin/products'
     | '/blog/$slug'
     | '/products/$slug'
     | '/admin'
@@ -170,6 +181,7 @@ export interface FileRouteTypes {
     | '/products'
     | '/sitemap.xml'
     | '/admin/login'
+    | '/admin/products'
     | '/blog/$slug'
     | '/products/$slug'
     | '/admin/'
@@ -273,6 +285,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/admin/products': {
+      id: '/admin/products'
+      path: '/products'
+      fullPath: '/admin/products'
+      preLoaderRoute: typeof AdminProductsRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/login': {
       id: '/admin/login'
       path: '/login'
@@ -285,11 +304,13 @@ declare module '@tanstack/react-router' {
 
 interface AdminRouteChildren {
   AdminLoginRoute: typeof AdminLoginRoute
+  AdminProductsRoute: typeof AdminProductsRoute
   AdminIndexRoute: typeof AdminIndexRoute
 }
 
 const AdminRouteChildren: AdminRouteChildren = {
   AdminLoginRoute: AdminLoginRoute,
+  AdminProductsRoute: AdminProductsRoute,
   AdminIndexRoute: AdminIndexRoute,
 }
 
