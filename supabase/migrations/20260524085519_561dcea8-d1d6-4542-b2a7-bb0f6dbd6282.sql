@@ -1,0 +1,1 @@
+ALTER TABLE public.products ADD COLUMN support JSONB NOT NULL DEFAULT '[]'::jsonb;
