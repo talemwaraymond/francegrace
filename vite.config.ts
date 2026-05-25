@@ -6,13 +6,10 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-const isGitHubPagesBuild = process.env.GITHUB_PAGES === "true";
-
 // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
 // @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
 export default defineConfig({
   vite: {
-    base: "/",
     build: {
       rollupOptions: {
         onwarn(warning, warn) {
@@ -23,21 +20,7 @@ export default defineConfig({
       },
     },
   },
-  cloudflare: isGitHubPagesBuild ? false : undefined,
   tanstackStart: {
     server: { entry: "server" },
-    prerender: {
-      enabled: isGitHubPagesBuild,
-      autoStaticPathsDiscovery: true,
-      concurrency: 1,
-    },
-    pages: isGitHubPagesBuild
-      ? [
-          { path: "/" },
-          { path: "/about" },
-          { path: "/products" },
-          { path: "/blog" },
-        ]
-      : [],
   },
 });
