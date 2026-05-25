@@ -15,7 +15,7 @@ export const Route = createFileRoute("/blog/")({
     ],
     links: [{ rel: "canonical", href: "https://www.franceshgrace.com/blog" }],
   }),
-  errorComponent: ({ error }) => <div className="mx-auto max-w-3xl px-4 py-24 text-center"><h1 className="font-serif text-3xl">Couldn't load articles</h1><p className="mt-3 text-muted-foreground">{error.message}</p></div>,
+  errorComponent: ({ error }) => { console.error(error); return <div className="mx-auto max-w-3xl px-4 py-24 text-center"><h1 className="font-serif text-3xl">Couldn't load articles</h1><p className="mt-3 text-muted-foreground">Please refresh the page in a moment.</p></div>; },
   component: BlogPage,
 });
 
