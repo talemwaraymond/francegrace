@@ -100,7 +100,7 @@ function BlogDetail() {
             <h2 className="font-serif text-3xl md:text-4xl">Keep reading</h2>
             <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
               {related.map((r) => (
-                <Link key={r.slug} to="/blog/$slug" params={{ slug: r.slug }} className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-lg">
+                <Link key={r.slug} to="/blog/$slug" params={() => ({ slug: r.slug })} className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-lg">
                   <div className="aspect-[4/3] overflow-hidden bg-muted">
                     <img src={productImage(r.image_key)} alt={`Franceshgrace ${r.title}`} loading="lazy" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
                   </div>
