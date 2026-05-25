@@ -35,7 +35,7 @@ function BlogPage() {
         </div>
       </section>
       <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-        <Link to="/blog/$slug" params={{ slug: feature.slug }} className="group grid grid-cols-1 overflow-hidden rounded-3xl border border-border bg-card transition-shadow hover:shadow-lg lg:grid-cols-2">
+        <Link to="/blog/$slug" params={() => ({ slug: feature.slug })} className="group grid grid-cols-1 overflow-hidden rounded-3xl border border-border bg-card transition-shadow hover:shadow-lg lg:grid-cols-2">
           <div className="aspect-[4/3] overflow-hidden bg-muted lg:aspect-auto">
             <img src={productImage(feature.image_key)} alt={`Franceshgrace article: ${feature.title}`} className="h-full w-full object-cover transition-transform group-hover:scale-105" />
           </div>
@@ -48,7 +48,7 @@ function BlogPage() {
         </Link>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {rest.map((p) => (
-            <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }} className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-lg">
+            <Link key={p.slug} to="/blog/$slug" params={() => ({ slug: p.slug })} className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-lg">
               <div className="aspect-[4/3] overflow-hidden bg-muted">
                 <img src={productImage(p.image_key)} alt={`Franceshgrace article: ${p.title}`} loading="lazy" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
               </div>
