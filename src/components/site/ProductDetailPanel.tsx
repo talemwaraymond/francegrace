@@ -50,7 +50,7 @@ export function ProductDetailPanel({ product, onClose }: { product: ProductDTO; 
             <p className="mt-1 text-sm text-foreground">{product.use}</p>
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link to="/products/$slug" params={{ slug: product.slug }} className="inline-flex items-center gap-2 rounded-full border border-foreground/15 px-5 py-2.5 text-sm font-medium text-foreground hover:bg-foreground/5">
+            <Link to="/products/$slug" params={() => ({ slug: product.slug })} className="inline-flex items-center gap-2 rounded-full border border-foreground/15 px-5 py-2.5 text-sm font-medium text-foreground hover:bg-foreground/5">
               Full product page <ExternalLink className="h-3.5 w-3.5" />
             </Link>
           </div>
