@@ -113,19 +113,6 @@ function AdminLogin() {
               : "Sign in"}
         </Button>
 
-        <button
-          type="button"
-          onClick={() => {
-            setError(null);
-            setInfo(null);
-            setMode(mode === "signin" ? "signup" : "signin");
-          }}
-          className="mt-4 w-full text-center text-sm text-muted-foreground underline-offset-4 hover:underline"
-        >
-          {mode === "signin"
-            ? "First time? Create an admin account"
-            : "Already have an account? Sign in"}
-        </button>
       </form>
     </div>
   );
