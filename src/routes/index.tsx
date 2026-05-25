@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
       }),
     }],
   }),
-  errorComponent: ({ error }) => <div className="mx-auto max-w-3xl px-4 py-24 text-center"><h1 className="font-serif text-3xl">Something went wrong</h1><p className="mt-3 text-muted-foreground">{error.message}</p></div>,
+  errorComponent: ({ error }) => { console.error(error); return <div className="mx-auto max-w-3xl px-4 py-24 text-center"><h1 className="font-serif text-3xl">Something went wrong</h1><p className="mt-3 text-muted-foreground">We couldn't load this page right now. Please refresh in a moment.</p></div>; },
   component: HomePage,
 });
 

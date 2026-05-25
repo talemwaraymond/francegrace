@@ -44,12 +44,15 @@ export const Route = createFileRoute("/blog/$slug")({
       <Link to="/blog" className="mt-6 inline-flex items-center gap-2 text-primary hover:underline"><ArrowLeft className="h-4 w-4" /> Back to journal</Link>
     </div>
   ),
-  errorComponent: ({ error }) => (
-    <div className="mx-auto max-w-3xl px-4 py-24 text-center">
-      <h1 className="font-serif text-3xl">Something went wrong</h1>
-      <p className="mt-3 text-muted-foreground">{error.message}</p>
-    </div>
-  ),
+  errorComponent: ({ error }) => {
+    console.error(error);
+    return (
+      <div className="mx-auto max-w-3xl px-4 py-24 text-center">
+        <h1 className="font-serif text-3xl">Something went wrong</h1>
+        <p className="mt-3 text-muted-foreground">Please refresh the page in a moment.</p>
+      </div>
+    );
+  },
   component: BlogDetail,
 });
 
