@@ -9,52 +9,25 @@ env:
   CI: false
   NODE_ENV: production
   GITHUB_PAGES: "true"
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
   VITE_SUPABASE_URL: https://ktxlvltheygbhyypnjep.supabase.co
   VITE_SUPABASE_PUBLISHABLE_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJIUzI1NiIsInJlZiI6Imt0eGx2bHRoZXlnYmh5eXBuamVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk1NzkzOTksImV4cCI6MjA5NTE1NTM5OX0.DlTbp9mwS7c88UqgICmkViuf2TlKlR-efnsxFT2BBvY
   VITE_SUPABASE_PROJECT_ID: ktxlvltheygbhyypnjep
 
 jobs:
-  install:
-    name: 01 Install Check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: npm
-      - run: npm ci --include=dev
-      - run: echo "Install succeeded"
-
-  build:
-    name: 02 Build Check
-    runs-on: ubuntu-latest
-    needs: install
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: npm
-      - run: npm ci --include=dev
-      - run: npm run build
-      - run: node scripts/prepare-github-pages.mjs
-
   deploy:
-    name: 03 Deploy to GitHub Pages
+    name: Build and Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    needs: build
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: "20"
+          node-version: "24"
           cache: npm
       - run: npm ci --include=dev
-      - run: npm run build
-      - run: node scripts/prepare-github-pages.mjs
+      - run: npm run build:github-pages
       - name: Write sitemap
         run: |
           cat > dist/client/sitemap.xml << 'EOF'
