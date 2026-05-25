@@ -98,7 +98,7 @@ function HomePage() {
           </div>
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
             {featuredPosts.map((b) => (
-              <Link key={b.slug} to="/blog/$slug" params={{ slug: b.slug }} className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-lg">
+              <Link key={b.slug} to="/blog/$slug" params={() => ({ slug: b.slug })} className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-lg">
                 <div className="aspect-[4/3] overflow-hidden bg-muted">
                   <img src={productImage(b.image_key)} alt={`Franceshgrace ${b.title}`} loading="lazy" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
                 </div>

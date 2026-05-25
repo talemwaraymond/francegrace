@@ -5,7 +5,7 @@ import type { ProductDTO } from "@/lib/types";
 
 export function ProductCard({ product }: { product: ProductDTO }) {
   return (
-    <Link to="/products/$slug" params={{ slug: product.slug }} className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl">
+    <Link to="/products/$slug" params={() => ({ slug: product.slug })} className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl">
       <div className="aspect-square overflow-hidden bg-muted">
         <img src={productImage(product.image_key)} alt={`Franceshgrace ${product.name}`} loading="lazy" className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
       </div>

@@ -30,7 +30,7 @@ const AUTOPLAY_MS = 5000;
 
 function ProductCardOverlay({ product }: { product: ProductDTO }) {
   return (
-    <Link to="/products/$slug" params={{ slug: product.slug }} className="group flex items-center gap-3 rounded-2xl bg-background/95 p-2.5 pr-4 shadow-2xl ring-1 ring-border/60 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-background">
+    <Link to="/products/$slug" params={() => ({ slug: product.slug })} className="group flex items-center gap-3 rounded-2xl bg-background/95 p-2.5 pr-4 shadow-2xl ring-1 ring-border/60 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-background">
       <div className="h-[60px] w-[60px] shrink-0 overflow-hidden rounded-xl bg-cream">
         <img src={productImage(product.image_key)} alt={product.name} className="h-full w-full object-contain p-1.5" />
       </div>

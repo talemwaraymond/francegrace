@@ -13,6 +13,15 @@ const isGitHubPagesBuild = process.env.GITHUB_PAGES === "true";
 export default defineConfig({
   vite: {
     base: "/",
+    build: {
+      rollupOptions: {
+        onwarn(warning, warn) {
+          if (warning.code === "UNUSED_EXTERNAL_IMPORT") return;
+          if (warning.code === "MODULE_LEVEL_EXPORT") return;
+          warn(warning);
+        },
+      },
+    },
   },
   cloudflare: isGitHubPagesBuild ? false : undefined,
   tanstackStart: {
