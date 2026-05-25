@@ -77,19 +77,34 @@ export const listAllPosts = createServerFn({ method: "GET" }).handler(
   },
 );
 
+function fallbackSettings(): SiteSettingsDTO {
+  return {
+    contact_email: "franceshgrace123@gmail.com",
+    footer_disclaimer: "These statements have not been evaluated by health authorities.",
+    instagram_url: "",
+    facebook_url: "",
+    linkedin_url: "",
+  };
+}
+
 export const getSiteSettings = createServerFn({ method: "GET" }).handler(
   async (): Promise<SiteSettingsDTO> => {
-    const { data, error } = await supabaseAdmin.from("site_settings").select("key,value");
-    if (error) throw new Error(error.message);
-    const map: Record<string, string> = {};
-    (data ?? []).forEach((r) => (map[r.key] = r.value));
-    return {
-      contact_email: map.contact_email ?? "franceshgrace123@gmail.com",
-      footer_disclaimer:
-        map.footer_disclaimer ?? "These statements have not been evaluated by health authorities.",
-      instagram_url: map.instagram_url ?? "",
-      facebook_url: map.facebook_url ?? "",
-      linkedin_url: map.linkedin_url ?? "",
-    };
+    try {
+      const { data, error } = await supabaseAdmin.from("site_settings").select("key,value");
+      if (error) throw new Error(error.message);
+      const map: Record<string, string> = {};
+      (data ?? []).forEach((r) => (map[r.key] = r.value));
+      const fb = fallbackSettings();
+      return {
+        contact_email: map.contact_email ?? fb.contact_email,
+        footer_disclaimer: map.footer_disclaimer ?? fb.footer_disclaimer,
+        instagram_url: map.instagram_url ?? fb.instagram_url,
+        facebook_url: map.facebook_url ?? fb.facebook_url,
+        linkedin_url: map.linkedin_url ?? fb.linkedin_url,
+      };
+    } catch (error) {
+      if (process.env.GITHUB_PAGES === "true") return fallbackSettings();
+      throw error;
+    }
   },
 );
